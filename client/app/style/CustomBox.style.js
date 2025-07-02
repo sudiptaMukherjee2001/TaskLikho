@@ -14,7 +14,8 @@ const CustomBox = styled('div')(({
     padding,
     width,
     paddingBottom,
-    marginTop
+    marginTop,
+    marginBottom
 
 }) => ({
     border: border,
@@ -28,8 +29,14 @@ const CustomBox = styled('div')(({
     justifyContent: justifyContent,
     padding: padding,
     width: width,
-    paddingBottom:paddingBottom,
-    marginTop:marginTop,
+    paddingBottom: paddingBottom,
+    marginTop: marginTop,
+    marginBottom:marginBottom,
+    marginBottom:marginBottom,
+
+    // ----------------------------------------------
+    // 1. Side navbar css
+    // ----------------------------------------------
 
     "& .sidebarTitle-laptop-layout": {
         // border: "1px solid red",
@@ -64,7 +71,7 @@ const CustomBox = styled('div')(({
         marginBottom: "1rem",
         fontSize: theme.typography.fontSize.sidebarItemSize,
         fontWeight: theme.typography.fontWeight.medium,
-        cursor:"pointer",
+        cursor: "pointer",
         "& .name": {
             marginLeft: "10px",
         }
@@ -75,14 +82,14 @@ const CustomBox = styled('div')(({
     // classes are just for testing purpose , We will remove it while implementing the logic
     //-----------------------------------------------------
     "&.sidebarItem-laptop-layout-inActive-testing": {
-     
+
         color: theme.colors.gradients.sideItemsColor.color,
-       
-       padding: "14px 20px",
+
+        padding: "14px 20px",
         marginBottom: "1rem",
         fontSize: theme.typography.fontSize.sidebarItemSize,
         fontWeight: theme.typography.fontWeight.medium,
-        cursor:"pointer",
+        cursor: "pointer",
         "& .name": {
             marginLeft: "10px",
         }
@@ -92,11 +99,11 @@ const CustomBox = styled('div')(({
         display: "flex",
         justifyContent: "center",
         position: "relative",
-      
+
         "&::after": {
             content: '""',
             position: "absolute",
-            bottom:"19px ",
+            bottom: "19px ",
             left: 0,
             width: "100%",
             height: "1px",
@@ -108,6 +115,31 @@ const CustomBox = styled('div')(({
     },
     "& .SideBar-footer-laptop": {
         fontSize: theme.typography.fontSize.tiny
+    },
+
+    // ----------------------------------------------
+    // 2.  TaskTimelineHeader css
+    // ----------------------------------------------
+    "& .task-timeline-header-typography": {
+        fontSize: theme.typography.fontSize.heading,
+        fontWeight: theme.typography.fontWeight.bold,
+        background: theme.colors.text.gradientText,
+        bacckgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        position: 'relative',
+        marginBottom:'0.5rem',
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            left: '0px',
+            bottom: '-10px',
+            height: '3px',
+            width: "60%",
+            background: theme.colors.gradients.decorative.line,
+            borderRadius: '3px'
+        }
+
     }
 
 }))
