@@ -13,7 +13,8 @@ const CustomBox = styled('div')(({
     justifyContent,
     padding,
     width,
-    paddingBottom
+    paddingBottom,
+    marginTop
 
 }) => ({
     border: border,
@@ -28,13 +29,14 @@ const CustomBox = styled('div')(({
     padding: padding,
     width: width,
     paddingBottom:paddingBottom,
+    marginTop:marginTop,
 
     "& .sidebarTitle-laptop-layout": {
         // border: "1px solid red",
-        // paddingBlock: "1rem",
+        paddingBlock: "1.5rem",
         fontSize: theme.typography.fontSize.logo,
         fontWeight: theme.typography.fontWeight.bold,
-        background: theme.colors.text.brandGradient,
+        background: theme.colors.text.gradientText,
         bacckgroundClip: "text",
         WebkitBackgroundClip: "text",
         color: "transparent",
@@ -42,17 +44,17 @@ const CustomBox = styled('div')(({
         '&::after': {
             content: '""',
             position: 'absolute',
-            left: '3px',
-            bottom: '-2px',
-            height: '4px',
-            width: "76%",
+            left: '0px',
+            bottom: '24px',
+            height: '3px',
+            width: "100%",
             background: theme.colors.gradients.decorative.line,
-            borderRadius: '2px'
+            borderRadius: '3px'
         }
 
 
     },
-    "&.sidebarItem-laptop-layout": {
+    "&.sidebarItem-laptop-layout-active-testing": {
         border: `1px solid ${theme.colors.gradients.border.cyan30}`,
         backgroundImage: theme.colors.gradients.sideItemsColor.backgroundImage,
         color: theme.colors.gradients.sideItemsColor.color,
@@ -67,16 +69,34 @@ const CustomBox = styled('div')(({
             marginLeft: "10px",
         }
     },
+
+    //-----------------------------------------------------
+    // this sidebarItem-laptop-layout-Active-testing and sidebarItem-laptop-layout-inActive-testing
+    // classes are just for testing purpose , We will remove it while implementing the logic
+    //-----------------------------------------------------
+    "&.sidebarItem-laptop-layout-inActive-testing": {
+     
+        color: theme.colors.gradients.sideItemsColor.color,
+       
+       padding: "14px 20px",
+        marginBottom: "1rem",
+        fontSize: theme.typography.fontSize.sidebarItemSize,
+        fontWeight: theme.typography.fontWeight.medium,
+        cursor:"pointer",
+        "& .name": {
+            marginLeft: "10px",
+        }
+    },
     "&.SideBar-footer-outer-laptop": {
         width: '100%',
         display: "flex",
         justifyContent: "center",
         position: "relative",
-        marginBottom:'2rem',
+      
         "&::after": {
             content: '""',
             position: "absolute",
-            bottom:"-7px ",
+            bottom:"19px ",
             left: 0,
             width: "100%",
             height: "1px",

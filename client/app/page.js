@@ -25,6 +25,17 @@ export default function Home() {
          
         </Grid>
         {/* Left side bar end*/}
+        {/* Right side content start */}
+        <Grid
+          item
+          size={{ md: 3, lg: 9,xl:10 }}
+          className='leftSidebar'
+        //  sx={{ border: '2px solid yellow' }}
+        >
+       hi
+         
+        </Grid>
+        {/* Left side bar end*/}
 
        
 

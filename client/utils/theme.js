@@ -4,7 +4,7 @@ const theme = {
     colors: {
         background: {
             main: "#0D1117", // Main dark background
-            sidebar: "linear-gradient(132deg, #0e182b, #2a3649)", // Sidebar background
+            sidebar: "linear-gradient(to bottom, #0f172a, #111827, #0f172a)", // Sidebar background
             card: "#1f2937", // Default card background
             overlay: "rgba(255, 255, 255, 0.05)", // Optional overlays
         },
@@ -21,8 +21,7 @@ const theme = {
             faded: "#6b7280",        // Sidebar faded labels
             sidebar: "#e5e7eb",      // Sidebar text color
             link: "#3b82f6",         // For clickable links
-
-            brandGradient: "linear-gradient(to right, #38bdf8, #8b5cf6)", // NEXUS title gradient
+            gradientText: "linear-gradient(to right, #38bdf8, #8b5cf6)", // NEXUS title gradient
         },
         gradients: {
             sideItemsColor: {
@@ -55,7 +54,7 @@ const theme = {
 
         fontSize: {
             logo: "2.2rem",        // For NEXUS
-            sidebarItemSize: "1.3rem",        // For NEXUS
+            sidebarItemSize: "1rem",        // For NEXUS
             heading: "2rem",       // For page headings like "Task Timeline"
             subheading: "1.25rem", // Smaller headings like card titles
             body: "1rem",          // Main content

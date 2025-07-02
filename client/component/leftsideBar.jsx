@@ -9,21 +9,19 @@ function LeftsideBar() {
             sidebarBackground="sidebar"
             display="flex"
             flexDirection="column"
-           justifyContent="space-between"
-           
+            justifyContent="space-between"
+            padding="24px"
 
         >
             {/* Brand name and navigation menu start */}
-            <CustomBox 
-            //border="2px solid red"  
-            padding="24px" >
+            <CustomBox
+            >
                 {/* Brand name start  */}
                 <CustomBox as="header"
-                    paddingBottom="24px"
                     // border="2px solid orange"
                     width="100%"
                     display="flex"
-                    // justifyContent="center"
+                    justifyContent="center"
                 >
                     <h1 className='sidebarTitle-laptop-layout'>
                         TaskLikho
@@ -31,10 +29,18 @@ function LeftsideBar() {
                 </CustomBox>
                 {/* Brand name end  */}
                 {/* navigation menu start*/}
-                <CustomBox as="section" width="100%" >
+                <CustomBox as="section"
+                    width="100%"
+                    // border="2px solid red"
+                    marginTop="2.5rem"
+
+                >
                     {
                         sidebarIcon.map((item, index) => (
-                            <CustomBox key={index} className='sidebarItem-laptop-layout'>
+                            <CustomBox key={index} className={`${item.isActive?"sidebarItem-laptop-layout-active-testing":"sidebarItem-laptop-layout-inActive-testing"}`}
+                         
+                            >
+
                                 <span className='icon'>{item.icon}</span>
                                 <span className='name'>{item.name}</span>
                             </CustomBox>
@@ -48,6 +54,7 @@ function LeftsideBar() {
             {/* copyright section start */}
             <CustomBox as="footer"
                 className='SideBar-footer-outer-laptop'
+                padding="24px"
             >
                 <h4 className='SideBar-footer-laptop'>
                     © 2025 TaskLikho
