@@ -2,6 +2,9 @@ import Image from "next/image";
 import Grid from '@mui/material/Grid';
 import LeftsideBar from "@/component/leftsideBar";
 import TaskTimelineHeader from "@/component/taskTimelineHeader";
+import AllTask from "@/component/allTask";
+import CustomBox from "./style/CustomBox.style";
+import { StyledRightsideContentGrid } from "./style/StyledRightsideContentGrid.style";
 
 export default function Home() {
   return (
@@ -10,8 +13,10 @@ export default function Home() {
         container
         //  alignItems={'center'}
         // justifyContent={'center'}
-        //  border={'1px solid orange'}
-        minHeight={100}
+         border={'1px solid orange'}
+         height={"100vh"}
+        
+       
       >
         {/* Left side bar start*/}
         <Grid
@@ -25,16 +30,26 @@ export default function Home() {
         </Grid>
         {/* Left side bar end*/}
         {/* Right side content start */}
-        <Grid
+        <StyledRightsideContentGrid
           item
           size={{ md: 3, lg: 9, xl: 10 }}
-          className='leftSidebar'
-          sx={{ border: '2px solid yellow' }}
-          padding={"2rem"}
+         
         >
           <TaskTimelineHeader />
+          {/* container for all task start */}
+           <CustomBox
+            border="2px solid red"
+            maxHeight="100vh"
+            minHeight="100vh"
+            overflow="auto"
+           
+          >
 
-        </Grid>
+          <AllTask/>
+          </CustomBox>
+          {/* container for all task end */}
+
+        </StyledRightsideContentGrid>
         {/* Left side bar end*/}
 
 

@@ -4,7 +4,7 @@ import React from 'react'
 function TaskTimelineHeader() {
   return (
    <CustomBox as="header"
-    border="2px solid red" 
+    // border="2px solid red" 
     display="flex"
     marginBottom="2.5rem"
     >

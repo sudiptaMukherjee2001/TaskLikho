@@ -5,6 +5,8 @@ import theme from '@/utils/theme.js';
 
 const CustomBox = styled('div')(({
     minHeight,
+    maxHeight,
+    height,
     border,
     sidebarBackground,
     display,
@@ -15,11 +17,14 @@ const CustomBox = styled('div')(({
     width,
     paddingBottom,
     marginTop,
-    marginBottom
+    marginBottom,
+    overflow
 
 }) => ({
     border: border,
     minHeight: minHeight,
+    maxHeight:maxHeight,
+    height:height,
     border: border,
     background: theme.colors.background[sidebarBackground],
     // background: "red",
@@ -32,8 +37,7 @@ const CustomBox = styled('div')(({
     paddingBottom: paddingBottom,
     marginTop: marginTop,
     marginBottom:marginBottom,
-    marginBottom:marginBottom,
-
+    overflow:overflow,
     // ----------------------------------------------
     // 1. Side navbar css
     // ----------------------------------------------
