@@ -79,7 +79,7 @@ const CustomBox = styled('div')(({
             bottom:"-7px ",
             left: 0,
             width: "100%",
-            height: "3px",
+            height: "1px",
             background: theme.colors.gradients.cyanToPurple,
             borderRadius: "10px",
         },
