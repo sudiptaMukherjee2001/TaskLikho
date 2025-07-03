@@ -38,7 +38,7 @@ export default function Home() {
           <TaskTimelineHeader />
           {/* container for all task start */}
            <CustomBox
-            border="2px solid red"
+            border="2px solid yellow"
             maxHeight="100vh"
             minHeight="100vh"
             overflow="auto"

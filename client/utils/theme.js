@@ -30,11 +30,15 @@ const theme = {
             },
             border: {
                 cyan30: "rgba(6, 182, 212, 0.3)", // border-cyan-500/30
+                slate700_50: "rgba(51, 65, 85, 0.5)",
+                cyan500_30: "rgba(6, 182, 212, 0.3)"
             },
             decorative: {
                 line: 'linear-gradient(to right, #4299e1, #9f7aea)',
             },
-           cyanToPurple: "linear-gradient(to right, rgba(6,182,212,0) 0%, rgba(6,172,237,0.3) 22%, oklch(70.4% 0.04 256.788) 64%,rgba(6,172,237,0.3) 75%, rgba(147,51,234,0) 100%)",
+            cyanToPurple: "linear-gradient(to right, rgba(6,182,212,0) 0%, rgba(6,172,237,0.3) 22%, oklch(70.4% 0.04 256.788) 64%,rgba(6,172,237,0.3) 75%, rgba(147,51,234,0) 100%)",
+            slateFade: "linear-gradient(to right, rgba(30, 41, 59, 0.8), rgba(31, 41, 55, 0.8), rgba(30, 41, 59, 0.8))",
+            calenderBoxGradientBg: "linear-gradient(to bottom right, rgba(6, 182, 212, 0.2), rgba(37, 99, 235, 0.2))"
         },
 
         status: {
@@ -49,6 +53,7 @@ const theme = {
         },
     },
 
+
     typography: {
         fontFamily: "'Inter', sans-serif",
 
@@ -60,6 +65,16 @@ const theme = {
             body: "1rem",          // Main content
             label: "0.875rem",     // Tags and status labels
             tiny: "0.75rem",       // Dates etc.
+           
+            sm: "0.875rem",      // text-sm (14px)
+            base: "1rem",        // text-base (16px)
+            lg: "1.125rem",      // text-lg (18px)
+            xl: "1.25rem",       // text-xl (20px)
+            "2xl": "1.5rem",     // text-2xl (24px)
+            "3xl": "1.875rem",   // text-3xl (30px)
+            "4xl": "2.25rem",    // text-4xl (36px)
+            "5xl": "3rem",       // text-5xl (48px)
+            "6xl": "3.75rem",    // text-6xl (60px)
         },
 
         fontWeight: {
@@ -92,7 +107,14 @@ const theme = {
         0 4px 6px -4px rgba(0, 0, 0, 0.1),
         0 0 8px rgba(6, 182, 212, 0.1)`,
         floatingButton: "0px 4px 20px rgba(59, 130, 246, 0.5)",
+        cardElevated: `
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 10px 10px -5px rgba(0, 0, 0, 0.04)
+  `,
     },
+    blur: {
+        sm: "blur(4px)"
+    }
 };
 
 export default theme;

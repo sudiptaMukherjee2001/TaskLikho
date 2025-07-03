@@ -14,17 +14,20 @@ const CustomBox = styled('div')(({
     alignItems,
     justifyContent,
     padding,
+    paddingInline,
+    paddingBlock,
     width,
     paddingBottom,
     marginTop,
     marginBottom,
-    overflow
+    marginLeft,
+    overflow,
 
 }) => ({
     border: border,
     minHeight: minHeight,
-    maxHeight:maxHeight,
-    height:height,
+    maxHeight: maxHeight,
+    height: height,
     border: border,
     background: theme.colors.background[sidebarBackground],
     // background: "red",
@@ -33,11 +36,14 @@ const CustomBox = styled('div')(({
     alignItems: alignItems,
     justifyContent: justifyContent,
     padding: padding,
+    paddingInline: paddingInline,
+    paddingBlock: paddingBlock,
     width: width,
     paddingBottom: paddingBottom,
     marginTop: marginTop,
-    marginBottom:marginBottom,
-    overflow:overflow,
+    marginBottom: marginBottom,
+    marginLeft: marginLeft,
+    overflow: overflow,
     // ----------------------------------------------
     // 1. Side navbar css
     // ----------------------------------------------
@@ -85,6 +91,7 @@ const CustomBox = styled('div')(({
     // this sidebarItem-laptop-layout-Active-testing and sidebarItem-laptop-layout-inActive-testing
     // classes are just for testing purpose , We will remove it while implementing the logic
     //-----------------------------------------------------
+
     "&.sidebarItem-laptop-layout-inActive-testing": {
 
         color: theme.colors.gradients.sideItemsColor.color,
@@ -132,7 +139,7 @@ const CustomBox = styled('div')(({
         WebkitBackgroundClip: "text",
         color: "transparent",
         position: 'relative',
-        marginBottom:'0.5rem',
+        marginBottom: '0.5rem',
         '&::after': {
             content: '""',
             position: 'absolute',
@@ -144,7 +151,34 @@ const CustomBox = styled('div')(({
             borderRadius: '3px'
         }
 
+    },
+    // ----------------------------------------------
+    // 2.  TaskTimelineHeader css
+    // ----------------------------------------------
+    "&.day-overviewBox": {
+        backgroundImage: theme.colors.gradients.slateFade,
+        backdropFilter: theme.blur.sm,
+        borderRadius: theme.borderRadius.card,
+        border: `1px solid ${theme.colors.gradients.border.slate700_50}`,
+        boxShadow: theme.shadow.cardElevated,
+
+        "& .calenderBox": {
+            border: `1px solid ${theme.colors.gradients.border.cyan30}`,
+            backgroundImage: theme.colors.gradients.calenderBoxGradientBg,
+            borderRadius:"0.5rem"
+
+        }
+
+    },
+    "& .date":{
+        fontSize: theme.typography.fontSize.lg,
+        
+    },
+    "& .sud-text":{
+        fontSize: theme.typography.fontSize.tiny,
+
     }
+
 
 }))
 
