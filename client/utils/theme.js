@@ -7,20 +7,23 @@ const theme = {
             sidebar: "linear-gradient(to bottom, #0f172a, #111827, #0f172a)", // Sidebar background
             card: "#1f2937", // Default card background
             overlay: "rgba(255, 255, 255, 0.05)", // Optional overlays
+            cardStatusBackgroundCompleted: "linear-gradient(to bottom right, #6ee7b7, #34d399, #059669)",   // Dark green for completed tasks
+            cardStatusBackgroundInProgress: "#3b3b3b",  // Dark gray for in-progress tasks
+            taskDisplayBackground: "rgba(0, 0, 0, 0.2)",
+
+
         },
 
-        cardStatusBackground: {
-            completed: "#064e3b",   // Dark green for completed tasks
-            inProgress: "#3b3b3b",  // Dark gray for in-progress tasks
-        },
+
 
         text: {
             primary: "#ffffff",      // Main white text
             secondary: "#d1d5db",    // Light gray for secondary text
             muted: "#9ca3af",        // Dimmed for labels etc
             faded: "#6b7280",        // Sidebar faded labels
-            sidebar: "#e5e7eb",      // Sidebar text color
+            sidebar: "#e5e7eb",      // Sidebar text color, task color also
             link: "#3b82f6",         // For clickable links
+            chipText: "oklch(20.8% 0.042 265.755)",
             gradientText: "linear-gradient(to right, #38bdf8, #8b5cf6)", // NEXUS title gradient
         },
         gradients: {
@@ -38,7 +41,9 @@ const theme = {
             },
             cyanToPurple: "linear-gradient(to right, rgba(6,182,212,0) 0%, rgba(6,172,237,0.3) 22%, oklch(70.4% 0.04 256.788) 64%,rgba(6,172,237,0.3) 75%, rgba(147,51,234,0) 100%)",
             slateFade: "linear-gradient(to right, rgba(30, 41, 59, 0.8), rgba(31, 41, 55, 0.8), rgba(30, 41, 59, 0.8))",
-            calenderBoxGradientBg: "linear-gradient(to bottom right, rgba(6, 182, 212, 0.2), rgba(37, 99, 235, 0.2))"
+            calenderBoxGradientBg: "linear-gradient(to bottom right, rgba(6, 182, 212, 0.2), rgba(37, 99, 235, 0.2))",
+            taskCompletedCard: "linear-gradient(to bottom right, #6ee7b7, #34d399, #059669)",
+
         },
 
         status: {
@@ -65,7 +70,7 @@ const theme = {
             body: "1rem",          // Main content
             label: "0.875rem",     // Tags and status labels
             tiny: "0.75rem",       // Dates etc.
-           
+
             sm: "0.875rem",      // text-sm (14px)
             base: "1rem",        // text-base (16px)
             lg: "1.125rem",      // text-lg (18px)
@@ -114,6 +119,22 @@ const theme = {
     },
     blur: {
         sm: "blur(4px)"
+    },
+    filter: {
+        dropShadow: "drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05))"
+    },
+    glass: {
+        greenCard: {
+            background: " linear-gradient(to bottom right,rgba(34, 211, 238, 0.1),rgba(16, 185, 129, 0.1))",
+            blur: "blur(10px)",
+            border: "1px solid rgba(255, 255, 255, 0.06)",
+            // shadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+            glow: `
+      0 0 8px rgba(16, 185, 129, 0.15),
+    0 0 18px rgba(16, 185, 129, 0.07),
+    0 0 30px rgba(16, 185, 129, 0.04)
+    `
+        }
     }
 };
 

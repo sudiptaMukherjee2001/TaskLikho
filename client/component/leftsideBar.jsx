@@ -6,7 +6,7 @@ function LeftsideBar() {
         <CustomBox
             minHeight='100vh'
             //border="3px solid red"
-            sidebarBackground="sidebar"
+            background="sidebar"
             display="flex"
             flexDirection="column"
             justifyContent="space-between"

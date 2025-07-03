@@ -11,12 +11,7 @@ export default function Home() {
     <>
       <Grid
         container
-        //  alignItems={'center'}
-        // justifyContent={'center'}
-         border={'1px solid orange'}
-         height={"100vh"}
-        
-       
+         height={"100vh"}    
       >
         {/* Left side bar start*/}
         <Grid
@@ -29,23 +24,20 @@ export default function Home() {
 
         </Grid>
         {/* Left side bar end*/}
+
+
         {/* Right side content start */}
         <StyledRightsideContentGrid
           item
           size={{ md: 3, lg: 9, xl: 10 }}
-         
         >
           <TaskTimelineHeader />
           {/* container for all task start */}
            <CustomBox
-            border="2px solid yellow"
-            maxHeight="100vh"
-            minHeight="100vh"
-            overflow="auto"
-           
+            padding="1.8rem"
           >
-
           <AllTask/>
+          
           </CustomBox>
           {/* container for all task end */}
 

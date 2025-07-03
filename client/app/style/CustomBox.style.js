@@ -8,42 +8,51 @@ const CustomBox = styled('div')(({
     maxHeight,
     height,
     border,
-    sidebarBackground,
+    background,
     display,
     flexDirection,
     alignItems,
     justifyContent,
+    rowGap,
     padding,
     paddingInline,
     paddingBlock,
     width,
     paddingBottom,
+    paddingLeft,
     marginTop,
     marginBottom,
     marginLeft,
     overflow,
+    borderRadius,
+    lineHeight
+    
 
 }) => ({
     border: border,
+    borderRadius:borderRadius,
     minHeight: minHeight,
     maxHeight: maxHeight,
     height: height,
-    border: border,
-    background: theme.colors.background[sidebarBackground],
+    background: theme.colors.background[background],
     // background: "red",
     display: display,
     flexDirection: flexDirection,
     alignItems: alignItems,
     justifyContent: justifyContent,
+    rowGap:rowGap,
     padding: padding,
     paddingInline: paddingInline,
     paddingBlock: paddingBlock,
+    paddingLeft:paddingLeft,
     width: width,
     paddingBottom: paddingBottom,
     marginTop: marginTop,
     marginBottom: marginBottom,
     marginLeft: marginLeft,
     overflow: overflow,
+    lineHeight:lineHeight,
+    
     // ----------------------------------------------
     // 1. Side navbar css
     // ----------------------------------------------
@@ -145,15 +154,15 @@ const CustomBox = styled('div')(({
             position: 'absolute',
             left: '0px',
             bottom: '-10px',
-            height: '3px',
-            width: "60%",
+            height: '5px',
+            width: "70%",
             background: theme.colors.gradients.decorative.line,
             borderRadius: '3px'
         }
 
     },
     // ----------------------------------------------
-    // 2.  TaskTimelineHeader css
+    // 3.  day-overviewBox css
     // ----------------------------------------------
     "&.day-overviewBox": {
         backgroundImage: theme.colors.gradients.slateFade,
@@ -177,6 +186,39 @@ const CustomBox = styled('div')(({
     "& .sud-text":{
         fontSize: theme.typography.fontSize.tiny,
 
+    },
+     // ----------------------------------------------
+    // 4.  TASK Card css
+    // ----------------------------------------------
+    "&.task-card":{
+        background:theme.glass.greenCard.background,
+        backdropFilter:theme.glass.greenCard.blur,
+        webkitBackdropFilter:theme.glass.greenCard.blur,
+        border:theme.glass.greenCard.border,
+          //boxShadow:theme.glass.greenCard.shadow,
+          borderRadius:"1rem",
+          padding:"1.5rem",
+          color:theme.colors.text.primary,
+          boxShadow:theme.glass.greenCard.glow
+    },
+    "& .task-name":{
+       color:theme.colors.text.sidebar,
+       fontSize: theme.typography.fontSize.label,
+       fontWeight: theme.typography.fontWeight.medium,
+       
+    },
+
+    "& .due-date":{
+        display:"flex",
+        alignItems:"center",
+        fontSize:theme.typography.fontSize.sm,
+        fontWeight:theme.typography.fontWeight.bold,
+        marginTop:"0.5rem",
+        "& .clock-icon":{
+            fontSize:theme.typography.fontSize.sm,
+            fontWeight:theme.typography.fontWeight.bold,
+            marginRight:"0.2rem"
+        }
     }
 
 

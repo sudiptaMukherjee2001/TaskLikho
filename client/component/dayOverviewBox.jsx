@@ -13,6 +13,7 @@ function DayOverviewBox() {
             paddingInline="1.5rem"
             paddingBlock="0.8rem"
             className='day-overviewBox'
+            marginBottom="2rem"
         >
             {/* CONTAINS THE CALENDER ICON */}
             <CustomBox

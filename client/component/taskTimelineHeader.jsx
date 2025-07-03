@@ -6,7 +6,8 @@ function TaskTimelineHeader() {
    <CustomBox as="header"
     // border="2px solid red" 
     display="flex"
-    marginBottom="2.5rem"
+    // marginBottom="2.5rem"
+    paddingLeft="2rem"
     >
     <h2 className='task-timeline-header-typography'>
         Task Timeline
