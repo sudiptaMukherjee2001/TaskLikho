@@ -1,4 +1,4 @@
-import CustomBox from '@/app/style/CustomBox.style.js'
+import CustomBox from '@/style/CustomBox.style.js'
 import React from 'react'
 import { sidebarIcon } from '@/utils/SidebarItems.util.js'
 function LeftsideBar() {

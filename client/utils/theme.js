@@ -43,6 +43,7 @@ const theme = {
             slateFade: "linear-gradient(to right, rgba(30, 41, 59, 0.8), rgba(31, 41, 55, 0.8), rgba(30, 41, 59, 0.8))",
             calenderBoxGradientBg: "linear-gradient(to bottom right, rgba(6, 182, 212, 0.2), rgba(37, 99, 235, 0.2))",
             taskCompletedCard: "linear-gradient(to bottom right, #6ee7b7, #34d399, #059669)",
+            darkBlurCard: "linear-gradient(to bottom right, #0f172a, #111827, #0f172a)"
 
         },
 
@@ -118,7 +119,8 @@ const theme = {
   `,
     },
     blur: {
-        sm: "blur(4px)"
+        sm: "blur(4px)",
+        xl: "blur(20px)",
     },
     filter: {
         dropShadow: "drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05))"

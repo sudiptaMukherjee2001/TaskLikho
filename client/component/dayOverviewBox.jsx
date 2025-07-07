@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomBox from '@/app/style/CustomBox.style'
+import CustomBox from '@/style/CustomBox.style'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 function DayOverviewBox() {
