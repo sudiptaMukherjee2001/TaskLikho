@@ -1,5 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Grid } from "@mui/material";
+import { StyledRightsideContentGrid } from "../style/StyledRightsideContentGrid.style";
+import LeftsideBar from "@/component/leftsideBar";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +24,33 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <Grid
+          container
+          height={"100vh"}
+        >
+          {/* Left side bar start*/}
+          <Grid
+            item
+            size={{ md: 3, lg: 3, xl: 2 }}
+            className='leftSidebar'
+          //  sx={{ border: '2px solid yellow' }}
+          >
+            <LeftsideBar />
+
+          </Grid>
+          {/* Left side bar end*/}
+
+
+          {/* Right side content start */}
+          <StyledRightsideContentGrid
+            item
+            size={{ md: 3, lg: 9, xl: 10 }}
+          >
+            {children}
+
+          </StyledRightsideContentGrid>
+          {/* Right side content end */}
+        </Grid>
       </body>
     </html>
   );

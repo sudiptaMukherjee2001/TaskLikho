@@ -25,6 +25,7 @@ const theme = {
             link: "#3b82f6",         // For clickable links
             chipText: "oklch(20.8% 0.042 265.755)",
             gradientText: "linear-gradient(to right, #38bdf8, #8b5cf6)", // NEXUS title gradient
+            completedTaskHeader: "linear-gradient(to right, #34d399, #22c55e, #14b8a6)"
         },
         gradients: {
             sideItemsColor: {
@@ -136,7 +137,52 @@ const theme = {
     0 0 18px rgba(16, 185, 129, 0.07),
     0 0 30px rgba(16, 185, 129, 0.04)
     `
-        }
+        },
+        completedTaskCard: {
+            background: "linear-gradient(to bottom right, rgba(6, 95, 70, 0.4), rgba(20, 83, 45, 0.3), rgba(19, 78, 74, 0.4))",
+            backdropFilter: "blur(4px)",
+            borderRadius: "1rem",
+            padding: "1.5rem",
+            border: "1px solid rgba(16, 185, 129, 0.2)",
+            boxShadow: `
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04)
+        `
+        },
+        activeDayTaskCard: {
+            background: "linear-gradient(to bottom right,rgba(22, 78, 99, 0.4),rgba(30, 58, 138, 0.3),rgba(22, 78, 99, 0.4))",
+            backdropFilter: "blur(4px)",
+            borderRadius: "1rem",
+            padding: "1.5rem",
+            border: "1px solid rgba(6, 182, 212, 0.2)",
+            boxShadow: `
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04)
+        `
+        },
+        avgDayTaskCard: {
+            background: "linear-gradient(to bottom right, rgba(120, 53, 15, 0.4), rgba(124, 45, 18, 0.3), rgba(120, 53, 15, 0.4) )",
+            backdropFilter: "blur(4px)",
+            borderRadius: "1rem",
+            padding: "1.5rem",
+            border: " 1px solid rgba(245, 158, 11, 0.2)",
+            boxShadow: `
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04)
+        `
+        },
+        bestDayTaskCard: {
+            background: "linear-gradient(to bottom right, rgba(76, 29, 149, 0.4), rgba(88, 28, 135, 0.3),rgba(49, 46, 129, 0.4))",
+            backdropFilter: "blur(4px)",
+            borderRadius: "1rem",
+            padding: "1.5rem",
+            border: " 1px solid rgba(139, 92, 246, 0.2)",
+            boxShadow: `
+       0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04)
+        `
+        },
+
     }
 };
 

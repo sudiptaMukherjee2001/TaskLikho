@@ -4,7 +4,8 @@ import { Grid } from "@mui/material";
 
 export const StyledRightsideContentGrid = styled(Grid)(({ }) => ({
     // border: '2px solid yellow',/
-    paddingTop: '2rem',
+    paddingBlock: '1.8rem',
+    paddingInline:"1.8rem",
     maxHeight: '100vh',
     minHeight: '100vh',
     overflow: 'auto',

@@ -26,11 +26,11 @@ const CustomBox = styled('div')(({
     overflow,
     borderRadius,
     lineHeight
-    
+
 
 }) => ({
     border: border,
-    borderRadius:borderRadius,
+    borderRadius: borderRadius,
     minHeight: minHeight,
     maxHeight: maxHeight,
     height: height,
@@ -40,19 +40,19 @@ const CustomBox = styled('div')(({
     flexDirection: flexDirection,
     alignItems: alignItems,
     justifyContent: justifyContent,
-    rowGap:rowGap,
+    rowGap: rowGap,
     padding: padding,
     paddingInline: paddingInline,
     paddingBlock: paddingBlock,
-    paddingLeft:paddingLeft,
+    paddingLeft: paddingLeft,
     width: width,
     paddingBottom: paddingBottom,
     marginTop: marginTop,
     marginBottom: marginBottom,
     marginLeft: marginLeft,
     overflow: overflow,
-    lineHeight:lineHeight,
-    
+    lineHeight: lineHeight,
+
     // ----------------------------------------------
     // 1. Side navbar css
     // ----------------------------------------------
@@ -174,53 +174,98 @@ const CustomBox = styled('div')(({
         "& .calenderBox": {
             border: `1px solid ${theme.colors.gradients.border.cyan30}`,
             backgroundImage: theme.colors.gradients.calenderBoxGradientBg,
-            borderRadius:"0.5rem"
+            borderRadius: "0.5rem"
 
         }
 
     },
-    "& .date":{
+    "& .date": {
         fontSize: theme.typography.fontSize.lg,
-        
+
     },
-    "& .sud-text":{
+    "& .sud-text": {
         fontSize: theme.typography.fontSize.tiny,
 
     },
-     // ----------------------------------------------
+    // ----------------------------------------------
     // 4.  TASK Card css
     // ----------------------------------------------
-    "&.task-card":{
-        background:theme.glass.greenCard.background,
-        backdropFilter:theme.glass.greenCard.blur,
-        webkitBackdropFilter:theme.glass.greenCard.blur,
-        border:theme.glass.greenCard.border,
-          //boxShadow:theme.glass.greenCard.shadow,
-          borderRadius:"1rem",
-          padding:"1.5rem",
-          color:theme.colors.text.primary,
-          boxShadow:theme.glass.greenCard.glow
+    "&.task-card": {
+        background: theme.glass.greenCard.background,
+        backdropFilter: theme.glass.greenCard.blur,
+        webkitBackdropFilter: theme.glass.greenCard.blur,
+        border: theme.glass.greenCard.border,
+        //boxShadow:theme.glass.greenCard.shadow,
+        borderRadius: "1rem",
+        padding: "1.5rem",
+        color: theme.colors.text.primary,
+        boxShadow: theme.glass.greenCard.glow
     },
-    "& .task-name":{
-       color:theme.colors.text.sidebar,
-       fontSize: theme.typography.fontSize.label,
-       fontWeight: theme.typography.fontWeight.medium,
-       
+    "& .task-name": {
+        color: theme.colors.text.sidebar,
+        fontSize: theme.typography.fontSize.label,
+        fontWeight: theme.typography.fontWeight.medium,
+
     },
 
-    "& .due-date":{
-        display:"flex",
-        alignItems:"center",
-        fontSize:theme.typography.fontSize.sm,
-        fontWeight:theme.typography.fontWeight.bold,
-        marginTop:"0.5rem",
-        "& .clock-icon":{
-            fontSize:theme.typography.fontSize.sm,
-            fontWeight:theme.typography.fontWeight.bold,
-            marginRight:"0.2rem"
+    "& .due-date": {
+        display: "flex",
+        alignItems: "center",
+        fontSize: theme.typography.fontSize.sm,
+        fontWeight: theme.typography.fontWeight.bold,
+        marginTop: "0.5rem",
+        "& .clock-icon": {
+            fontSize: theme.typography.fontSize.sm,
+            fontWeight: theme.typography.fontWeight.bold,
+            marginRight: "0.2rem"
+        }
+    },
+    // ----------------------------------------------
+    // 5.  Complete page header
+    // ----------------------------------------------
+    "& .completed-task-timeline-header-typography": {
+        fontSize: theme.typography.fontSize.heading,
+        fontWeight: theme.typography.fontWeight.bold,
+        background: theme.colors.text.completedTaskHeader,
+        bacckgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        position: 'relative',
+        marginBottom: '0.8rem',
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            left: '0px',
+            bottom: '-10px',
+            height: '5px',
+            width: "70%",
+            background: theme.colors.text.completedTaskHeader,
+            borderRadius: '3px'
+        }
+
+    },
+    "& .completed-task-timeline-sub-header-typography": {
+        fontSize: theme.typography.fontSize.body,
+        fontWeight: theme.typography.fontWeight.medium,
+
+
+    },
+    "& .taskPanel-overviewBox": {
+        background: background
+    },
+    "&.CompletedOnDate": {
+        color: "#6ee7b7",
+        fontSize: theme.typography.fontSize.tiny,
+        fontWeight: theme.typography.fontWeight.bold,
+        marginTop: "0.9rem",
+        // border:"2px solid red"
+        display: "flex",
+        alignItems: "center",
+        columnGap: "0.2rem",
+        "& .tick-icon": {
+            fontSize: theme.typography.fontSize.label,
         }
     }
-
 
 }))
 

@@ -17,8 +17,7 @@ function TaskTimelineHeader() {
     display="flex"
     justifyContent="space-between"
     alignItems="center"
-    // marginBottom="2.5rem"
-    paddingInline="2rem"
+    marginBottom="1.8rem"
     >
     <h2 className='task-timeline-header-typography'>
         Task Timeline
