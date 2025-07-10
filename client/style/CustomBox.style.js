@@ -221,7 +221,7 @@ const CustomBox = styled('div')(({
         }
     },
     // ----------------------------------------------
-    // 5.  Complete page header
+    // 5.  Complete page 
     // ----------------------------------------------
     "& .completed-task-timeline-header-typography": {
         fontSize: theme.typography.fontSize.heading,
@@ -265,7 +265,35 @@ const CustomBox = styled('div')(({
         "& .tick-icon": {
             fontSize: theme.typography.fontSize.label,
         }
-    }
+    },
+    // ----------------------------------------------
+    // 6.  Pending page 
+    // ----------------------------------------------
+    "& .pending-task-timeline-header-typography": {
+        fontSize: theme.typography.fontSize.heading,
+        fontWeight: theme.typography.fontWeight.bold,
+        background: theme.colors.text.pendingTaskHeader,
+        bacckgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+        position: 'relative',
+        marginBottom: '0.8rem',
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            left: '0px',
+            bottom: '-10px',
+            height: '5px',
+            width: "70%",
+            background: theme.colors.text.pendingTaskHeader,
+            borderRadius: '3px'
+        }
+
+    },
+     "& .pending-task-timeline-sub-header-typography": {
+        fontSize: theme.typography.fontSize.body,
+        fontWeight: theme.typography.fontWeight.medium,
+    },
 
 }))
 

@@ -25,7 +25,8 @@ const theme = {
             link: "#3b82f6",         // For clickable links
             chipText: "oklch(20.8% 0.042 265.755)",
             gradientText: "linear-gradient(to right, #38bdf8, #8b5cf6)", // NEXUS title gradient
-            completedTaskHeader: "linear-gradient(to right, #34d399, #22c55e, #14b8a6)"
+            completedTaskHeader: "linear-gradient(to right, #34d399, #22c55e, #14b8a6)",
+            pendingTaskHeader:"linear-gradient(to right, #fbbf24, #f97316, #ca8a04)"
         },
         gradients: {
             sideItemsColor: {
