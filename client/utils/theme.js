@@ -26,7 +26,7 @@ const theme = {
             chipText: "oklch(20.8% 0.042 265.755)",
             gradientText: "linear-gradient(to right, #38bdf8, #8b5cf6)", // NEXUS title gradient
             completedTaskHeader: "linear-gradient(to right, #34d399, #22c55e, #14b8a6)",
-            pendingTaskHeader:"linear-gradient(to right, #fbbf24, #f97316, #ca8a04)"
+            pendingTaskHeader: "linear-gradient(to right, #fbbf24, #f97316, #ca8a04)"
         },
         gradients: {
             sideItemsColor: {
@@ -52,6 +52,7 @@ const theme = {
         status: {
             completed: "#10b981",    // Green dot/text
             inProgress: "#facc15",   // Yellow
+            pendding:"linear-gradient(to right, rgba(245, 158, 11, 0.3), rgba(249, 115, 22, 0.3))"
         },
 
         priority: {
@@ -132,7 +133,7 @@ const theme = {
             background: " linear-gradient(to bottom right,rgba(34, 211, 238, 0.1),rgba(16, 185, 129, 0.1))",
             blur: "blur(10px)",
             border: "1px solid rgba(255, 255, 255, 0.06)",
-            // shadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+            shadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
             glow: `
       0 0 8px rgba(16, 185, 129, 0.15),
     0 0 18px rgba(16, 185, 129, 0.07),
@@ -183,6 +184,10 @@ const theme = {
     0 10px 10px -5px rgba(0, 0, 0, 0.04)
         `
         },
+        pendingTaskCard: {
+            background: "linear-gradient(to bottom right, rgb(120 53 15), rgb(154 52 18 / 81%), rgb(202 138 4 / 55%))",
+            boxShadow:" 0 10px 15px rgba(0,0,0,0.1)"
+        }
 
     }
 };

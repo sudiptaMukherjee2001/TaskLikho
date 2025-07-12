@@ -190,7 +190,7 @@ const CustomBox = styled('div')(({
     // ----------------------------------------------
     // 4.  TASK Card css
     // ----------------------------------------------
-    "&.task-card": {
+    "&.completed-taskCard": {
         background: theme.glass.greenCard.background,
         backdropFilter: theme.glass.greenCard.blur,
         webkitBackdropFilter: theme.glass.greenCard.blur,
@@ -290,10 +290,35 @@ const CustomBox = styled('div')(({
         }
 
     },
-     "& .pending-task-timeline-sub-header-typography": {
+    "& .pending-task-timeline-sub-header-typography": {
         fontSize: theme.typography.fontSize.body,
         fontWeight: theme.typography.fontWeight.medium,
     },
+    "&.pending-taskCard": {
+        background: theme.glass.pendingTaskCard.background,
+        backdropFilter: theme.glass.greenCard.blur,
+        webkitBackdropFilter: theme.glass.greenCard.blur,
+        border: theme.glass.greenCard.border,
+        //boxShadow:theme.glass.greenCard.shadow,
+        borderRadius: "1rem",
+        padding: "1.5rem",
+        color: theme.colors.text.primary,
+        boxShadow: theme.glass.greenCard.glow
+    },
+    "&.dueDateText , &.createdOnText": {
+        color: "rgb(252 165 165)",
+        fontSize: theme.typography.fontSize.tiny,
+        fontWeight: theme.typography.fontWeight.bold,
+        marginTop: "0.9rem",
+        // border:"2px solid red"
+        display: "flex",
+        alignItems: "center",
+        columnGap: "0.2rem",
+        "& .tick-icon": {
+            fontSize: theme.typography.fontSize.label,
+        }
+    }
+
 
 }))
 

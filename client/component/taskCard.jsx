@@ -2,14 +2,17 @@ import CustomBox from '@/style/CustomBox.style'
 import CustomChip from '@/style/CustomChip.style'
 import React from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-function CompleteTaskCard({completdOn}) {
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+function TaskinfoCard({taskCard,taskStatusText,taskStatus,completdOn,duedate,createdOn}) {
     return (
         
 
             <CustomBox
                 // border="2px solid orange"
                 padding="1.5rem"
-                className='task-card'
+                className={taskCard}
+
             >
                 {/* top part start */}
                 <CustomBox
@@ -19,8 +22,8 @@ function CompleteTaskCard({completdOn}) {
                     justifyContent="space-between"
                 >
                     <CustomChip
-                        label="Completed"
-                        className='task-Completed'
+                        label={taskStatusText}
+                        className={taskStatus}
                     />
                     <CustomChip
                         label="Low"
@@ -55,6 +58,28 @@ function CompleteTaskCard({completdOn}) {
                     </CustomBox>
                     :""
                 }
+                {
+                    duedate?
+                    <CustomBox 
+                    as="section" 
+                    className='dueDateText'
+                    >
+                        <CalendarMonthIcon className='tick-icon'/>
+                       Due: Oct 20, 2024 (Overdue)
+                    </CustomBox>
+                    :""
+                }
+                {
+                    createdOn?
+                    <CustomBox 
+                    as="section" 
+                    className='createdOnText'
+                    >
+                        <AccessTimeIcon className='tick-icon'/>
+                     Created on Oct 9, 2024
+                    </CustomBox>
+                    :""
+                }
 
             </CustomBox>
     
@@ -62,4 +87,4 @@ function CompleteTaskCard({completdOn}) {
     )
 }
 
-export default CompleteTaskCard
+export default TaskinfoCard

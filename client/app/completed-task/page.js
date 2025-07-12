@@ -3,6 +3,7 @@ import TaskStatsPanel from '@/component/taskStatsPanel'
 import { Grid } from '@mui/material'
 import CompleteTaskCard from '@/component/taskCard'
 import TaskStatsHeader from '@/component/taskStatsHeader'
+import TaskinfoCard from '@/component/taskCard'
 
 function CompltedTask() {
   return (
@@ -21,7 +22,12 @@ function CompltedTask() {
           size={{ lg: 4, xl: 3 }}
         >
           {/* TASK CARD START */}
-          <CompleteTaskCard completdOn="Oct 11, 2024" />
+          <TaskinfoCard
+          taskStatusText="Completed" 
+          completdOn="Oct 11, 2024" 
+          taskCard="completed-taskCard"
+          taskStatus="task-Completed"
+          />
           {/* TASK CARD END */}
 
         </Grid>
@@ -30,7 +36,12 @@ function CompltedTask() {
           size={{ lg: 4, xl: 3 }}
         >
           {/* TASK CARD START */}
-          <CompleteTaskCard completdOn="Oct 11, 2024" />
+          <TaskinfoCard
+          taskStatusText="Completed" 
+          completdOn="Oct 11, 2024" 
+          taskCard="completed-taskCard"
+          taskStatus="task-Completed"
+          />
           {/* TASK CARD END */}
 
         </Grid>
@@ -39,7 +50,12 @@ function CompltedTask() {
           size={{ lg: 4, xl: 3 }}
         >
           {/* TASK CARD START */}
-          <CompleteTaskCard completdOn="Oct 11, 2024" />
+          <TaskinfoCard
+          taskStatusText="Completed" 
+          completdOn="Oct 11, 2024" 
+          taskCard="completed-taskCard"
+          taskStatus="task-Completed"
+          />
           {/* TASK CARD END */}
 
         </Grid>
@@ -48,19 +64,17 @@ function CompltedTask() {
           size={{ lg: 4, xl: 3 }}
         >
           {/* TASK CARD START */}
-          <CompleteTaskCard completdOn="Oct 11, 2024" />
+          <TaskinfoCard
+          taskStatusText="Completed" 
+          completdOn="Oct 11, 2024" 
+          taskCard="completed-taskCard"
+          taskStatus="task-Completed"
+          />
           {/* TASK CARD END */}
 
         </Grid>
-        <Grid
-          item
-          size={{ lg: 4, xl: 3 }}
-        >
-          {/* TASK CARD START */}
-          <CompleteTaskCard completdOn="Oct 11, 2024" />
-          {/* TASK CARD END */}
-
-        </Grid>
+        
+       
 
       </Grid>
     </>
