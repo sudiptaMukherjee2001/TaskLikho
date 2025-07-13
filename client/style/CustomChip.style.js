@@ -22,6 +22,14 @@ const CustomChip = styled(Chip)(({ }) => ({
         backgroundImage: theme.colors.status.pendding,
         borderRadius: '10px'
         
+    },
+    // -------------------------------
+    // chip styles for in pogress chip
+    // -------------------------------
+    "&.task-inprogress":{
+        background: theme.colors.status.inProgress,
+        borderRadius: '10px'
+        
     }
 }))
 

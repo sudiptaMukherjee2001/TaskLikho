@@ -51,7 +51,7 @@ const theme = {
 
         status: {
             completed: "#10b981",    // Green dot/text
-            inProgress: "#facc15",   // Yellow
+            inProgress: "rgb(245 215 94 / 92%)",   // Yellow
             pendding:"linear-gradient(to right, rgba(245, 158, 11, 0.3), rgba(249, 115, 22, 0.3))"
         },
 
