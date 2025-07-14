@@ -9,12 +9,11 @@
 //const asyncHandler = (fn) => async()=>{} now this is an async function
 
 
-const asyncHandler = (fn) => (req, res, next) => { // this req, res, next are comming from fn  that we are passing
-    Promise.resolve(fn(req, res, next))
+const asyncHandler = (fn) =>  (req, res, next) => { // this req, res, next are comming from fn  that we are passing
+      Promise.resolve(fn(req, res, next))
     .catch((error) => {
         next(error); // pass the error to the next middleware
         console.error('Error in asyncHandler:', error);
-        res.status(500).json({ message: 'Internal Server Error' });
     });
 }
 
