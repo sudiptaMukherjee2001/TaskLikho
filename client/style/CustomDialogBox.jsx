@@ -37,7 +37,8 @@ const CustomDialogBox = styled(Dialog)(({ }) => ({
 
 }))
 const StyledInput = styled(TextField)({
-    marginBottom: '1.2rem',
+    marginBottom: '1rem',
+
     '& .MuiInputBase-root': {
         backgroundColor: 'rgba(255, 255, 255, 0.05)',
         color: '#fff',
@@ -72,18 +73,23 @@ const CancelTaskModal = styled(Button)({
     },
 
 });
-const CreateTaskBtn = styled(Button)({
-    background: 'linear-gradient(to right, #3b82f6, #9333ea)',
+const CreateTaskBtn = styled(Button)(({
+    padding,
+    borderRadius,
+    width
+})=>({
+    width: width ,
+     background: 'linear-gradient(to right, #3b82f6, #9333ea)',
     color: 'white',
-    padding: '0.5rem 1.5rem',
-    borderRadius: '0.7rem',
+    padding: padding || '0.5rem 1.5rem',
+    borderRadius:borderRadius|| '0.5rem',
     // marginTop: '1rem',
     textTransform: 'none',
     fontWeight: 600,
     '&:hover': {
         background: 'linear-gradient(to right, #2563eb, #7e22ce)',
     },
-});
+}))
 
 export {
     CustomDialogBox,
