@@ -5,6 +5,7 @@ import { useFieldArray, useForm } from 'react-hook-form';
 import CustomBox from '@/style/CustomBox.style';
 import { Grid } from "@mui/material";
 import TaskListSection from './taskListSection';
+import { createTaskReq } from '@/utils/CreateReq.util.js';
 
 function DialogForm({ open, handleClose }) {
   const [taskName, setTaskName] = useState('');
@@ -35,7 +36,7 @@ function DialogForm({ open, handleClose }) {
       ))
     }
     console.log('finalData:', finalData);// this finalData will be sent to the server
-    
+    await createTaskReq(finalData);
 
 
   }
