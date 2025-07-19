@@ -1,7 +1,11 @@
+'use client'
 import CustomBox from '@/style/CustomBox.style.js'
 import React from 'react'
 import { sidebarIcon } from '@/utils/SidebarItems.util.js'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 function LeftsideBar() {
+    const pathname = usePathname();
     return (
         <CustomBox
             minHeight='100vh'
@@ -37,12 +41,15 @@ function LeftsideBar() {
                 >
                     {
                         sidebarIcon.map((item, index) => (
-                            <CustomBox key={index} className={`${item.isActive?"sidebarItem-laptop-layout-active-testing":"sidebarItem-laptop-layout-inActive-testing"}`}
-                         
-                            >
+                            <CustomBox key={index} className={`${pathname === item.link?"sidebarItem-laptop-layout-active-testing":"sidebarItem-laptop-layout-inActive-testing"}`}
 
+                            >
+                                <Link href={item.link}>
+                            
                                 <span className='icon'>{item.icon}</span>
                                 <span className='name'>{item.name}</span>
+                        </Link>
+
                             </CustomBox>
                         ))
 

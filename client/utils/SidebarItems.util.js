@@ -2,10 +2,10 @@
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 export const sidebarIcon = [
-  { name: "Active Tasks", icon: '✅', isActive: true },
-  { name: "Completed", icon: '✅', isActive: false },
-  { name: "Pending", icon: '✅', isActive: false },
-  { name: "Analytics", icon: '✅', isActive: false },
+  { name: "Active Tasks", icon: '✅',link:'/'},
+  { name: "Completed", icon: '✅',link:'/completed-task'},
+  { name: "Pending", icon: '✅', isActive: false, link:'#'},
+  { name: "Analytics", icon: '✅', isActive: false, link:'#'},
 ];
 export const taskStatsPanel = [
   {name:"Total Completed", number: "18", icon:<CalendarMonthIcon/>  },
