@@ -200,8 +200,8 @@ const CustomBox = styled('div')(({
         padding: "1.5rem",
         color: theme.colors.text.primary,
         boxShadow: theme.glass.greenCard.glow,
-        border:"2px solid red",
-        maxWidth:"300px"
+     
+       
         
     },
     // ----------------------------------------------

@@ -26,7 +26,7 @@ async function AllTask() {
                             as="section"
                             className="day-overView-section"
                             display="flex"
-                            border="2px solid red"
+                            // border="2px solid red"
                         >
                             <DayOverviewBox date={task.dueDate} />
                         </CustomBox>
@@ -34,13 +34,10 @@ async function AllTask() {
 
                         {/* THIS GRID HOLDS ALL THE TASKS */}
                         <Grid container spacing={3}
-                        //  border="2px solid green"
                          >
                             {task?.tasks.map((taskInfo, taskIdx) => (
                                 <Grid item key={taskIdx}
                                  size={{  lg: 4,xl:3 }}
-                                 
-                                 border={"2px solid blue"}
                                  >
                                     <TaskinfoCard
                                         taskStatusText="inprogress"

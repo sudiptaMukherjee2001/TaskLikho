@@ -4,6 +4,7 @@ import React from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { CustomCheckBox } from '@/style/CustomCheckBox.style';
 function TaskinfoCard({ taskCard,
     taskStatusText,
     taskStatus,
@@ -42,17 +43,21 @@ function TaskinfoCard({ taskCard,
             {/* Main task Content */}
             <CustomBox
                 background="taskDisplayBackground"
-                // display="flex"
+                display="flex"
                 // flexDirection="column"
+                alignItems="center"
                 marginTop="1rem"
                 color='sidebar'
                 padding="0.85rem"
                 borderRadius="0.5rem"
                 lineHeight="1.3rem"
             >
+                {taskStatusText === "inprogress" ?
+                    <CustomCheckBox  color="success"/> : ""
+                }
                 <h4 className='task-name '>
                     {taskName}
-                    {/* morning walk */}
+
                 </h4>
             </CustomBox>
             {/* Main task Content END*/}
