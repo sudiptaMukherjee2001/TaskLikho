@@ -45,7 +45,7 @@ const CustomBox = styled('div')(({
     paddingInline: paddingInline,
     paddingBlock: paddingBlock,
     paddingLeft: paddingLeft,
-    width: width,
+   // width: width,
     paddingBottom: paddingBottom,
     marginTop: marginTop,
     marginBottom: marginBottom,
@@ -188,7 +188,24 @@ const CustomBox = styled('div')(({
 
     },
     // ----------------------------------------------
-    // 4.  TASK Card css
+    // 4.  inpogress TASK Card css
+    // ----------------------------------------------
+   "&.inpogress-taskCard": {
+        background: theme.glass.greenCard.background,
+        backdropFilter: theme.glass.greenCard.blur,
+        webkitBackdropFilter: theme.glass.greenCard.blur,
+        border: theme.glass.greenCard.border,
+        //boxShadow:theme.glass.greenCard.shadow,
+        borderRadius: "1rem",
+        padding: "1.5rem",
+        color: theme.colors.text.primary,
+        boxShadow: theme.glass.greenCard.glow,
+        border:"2px solid red",
+        maxWidth:"300px"
+        
+    },
+    // ----------------------------------------------
+    // 5.  Complete page 
     // ----------------------------------------------
     "&.completed-taskCard": {
         background: theme.glass.greenCard.background,
@@ -205,7 +222,7 @@ const CustomBox = styled('div')(({
         color: theme.colors.text.sidebar,
         fontSize: theme.typography.fontSize.label,
         fontWeight: theme.typography.fontWeight.medium,
-
+        
     },
 
     "& .due-date": {
@@ -220,9 +237,6 @@ const CustomBox = styled('div')(({
             marginRight: "0.2rem"
         }
     },
-    // ----------------------------------------------
-    // 5.  Complete page 
-    // ----------------------------------------------
     "& .completed-task-timeline-header-typography": {
         fontSize: theme.typography.fontSize.heading,
         fontWeight: theme.typography.fontWeight.bold,

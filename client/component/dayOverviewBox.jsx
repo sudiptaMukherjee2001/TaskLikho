@@ -2,7 +2,7 @@ import React from 'react'
 import CustomBox from '@/style/CustomBox.style'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
-function DayOverviewBox() {
+function DayOverviewBox({date}) {
     return (
         // Date box
         <CustomBox
@@ -30,7 +30,7 @@ function DayOverviewBox() {
                 flexDirection="column"
                 marginLeft="1rem"
             >
-                <span className='date'>Oct 11, 2024</span>
+                <span className='date'>{date}</span>
                 <span className='sud-text'>6 tasks</span>
             </CustomBox>
 
