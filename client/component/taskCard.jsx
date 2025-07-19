@@ -83,10 +83,11 @@ function TaskinfoCard({ taskCard,
                         className='CompletedOnDate'
                     >
                         <CheckCircleIcon className='tick-icon' />
-                        Completed on Oct 15, 2024
+                        Completed on {completdOn}
                     </CustomBox>
                     : ""
             }
+            {/* For pendding page */}
             {
                 duedate ?
                     <CustomBox

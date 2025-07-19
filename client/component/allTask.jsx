@@ -7,20 +7,21 @@ import { GetAllTaskReq } from '@/utils/GetallTaskReq.utli';
 
 async function AllTask() {
     const alltaskRes = await GetAllTaskReq();
-    const { data } = alltaskRes;
-    console.log("From all task comp", data);
-    const visibleDateCards = data.filter((item) => {
+  
+    
+    const inProgressCard = alltaskRes?.data?.filter((item) => {
         return item.tasks.some(task => task.isCompleted === false);
     })
-    console.log("visibleDateCards", visibleDateCards);
+    console.log("inProgressCard", inProgressCard);
 
     return (
 
-        visibleDateCards?.map((visibleTask, visibleIndex) => {
+        inProgressCard?.map((inProgressTask, index) => {
             return (
                 <CustomBox
                     as="section"
                     marginBottom="2rem"
+                    key={index}
                 >
                     {/* DUE DATE OVERVIEW BOX START */}
                     <CustomBox
@@ -29,12 +30,12 @@ async function AllTask() {
                         display="flex"
                     // border="2px solid red"
                     >
-                        <DayOverviewBox date={visibleTask.dueDate} />
+                        <DayOverviewBox date={inProgressTask.dueDate} />
                     </CustomBox>
                     {/* DUE DATE OVERVIEW BOX END */}
                     <Grid container spacing={3}>
                         {
-                            visibleTask.tasks
+                            inProgressTask.tasks
                                 .filter(taskInfo => taskInfo.isCompleted === false) // 🧹 Filter first
                                 .map((taskInfo, taskIdx) => (
                                     <Grid item key={taskIdx}  size={{ lg: 4, xl: 3 }}>
