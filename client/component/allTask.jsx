@@ -45,6 +45,7 @@ async function AllTask() {
                                         taskStatus="task-inprogress"
                                         taskName={taskInfo.taskName}
                                         priority={taskInfo.priority}
+                                        taskId={taskInfo._id}
                                       
                                     />
                                 </Grid>

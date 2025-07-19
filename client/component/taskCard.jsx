@@ -1,6 +1,7 @@
+'use client'
+import React, { useState } from 'react'
 import CustomBox from '@/style/CustomBox.style'
 import CustomChip from '@/style/CustomChip.style'
-import React from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -12,8 +13,19 @@ function TaskinfoCard({ taskCard,
     duedate,
     createdOn,
     taskName,
-    priority
+    priority,
+    taskId
 }) {
+    const [isCompleted, setIsCompleted] = useState();
+    const handleCheckboxChange =  (e) => {
+        const newStatus = e.target.checked;
+        console.log("Checkbox changed:", newStatus);
+        console.log("This is taskId", taskId);
+        
+        
+
+
+    }
     return (
 
 
@@ -53,7 +65,9 @@ function TaskinfoCard({ taskCard,
                 lineHeight="1.3rem"
             >
                 {taskStatusText === "inprogress" ?
-                    <CustomCheckBox  color="success"/> : ""
+                    <CustomCheckBox color="success"
+                        onChange={handleCheckboxChange}
+                    /> : ""
                 }
                 <h4 className='task-name '>
                     {taskName}
