@@ -9,53 +9,99 @@ async function AllTask() {
     const alltaskRes = await GetAllTaskReq();
     const { data } = alltaskRes;
     console.log("From all task comp", data);
+    const visibleDateCards = data.filter((item) => {
+        return item.tasks.some(task => task.isCompleted === false);
+    })
+    console.log("visibleDateCards", visibleDateCards);
 
     return (
-        <>
-            {data.map((task, index) => {
-                console.log("task", task.dueDate);
 
-                return (
+
+
+        // <CustomBox
+
+        //     as="section"
+        //     marginBottom="2rem"
+        // >
+
+        visibleDateCards?.map((visibleTask, visibleIndex) => {
+            return (
+                <CustomBox
+                    as="section"
+                    marginBottom="2rem"
+                >
+                    {/* DUE DATE OVERVIEW BOX START */}
                     <CustomBox
-                        key={index} // key for the outer CustomBox
                         as="section"
-                        marginBottom="2rem"
+                        className="day-overView-section"
+                        display="flex"
+                    // border="2px solid red"
                     >
-                        {/* DUE DATE OVERVIEW BOX START */}
-                        <CustomBox
+                        <DayOverviewBox date={visibleTask.dueDate} />
+                    </CustomBox>
+                    {/* DUE DATE OVERVIEW BOX END */}
+                    <Grid container spacing={3}>
+                        {
+                            visibleTask.tasks
+                                .filter(taskInfo => taskInfo.isCompleted === false) // 🧹 Filter first
+                                .map((taskInfo, taskIdx) => (
+                                    <Grid item key={taskIdx}  size={{ lg: 4, xl: 3 }}>
+                                        <TaskinfoCard
+                                            taskStatusText="inprogress"
+                                            taskCard="inpogress-taskCard"
+                                            taskStatus="task-inprogress"
+                                            taskName={taskInfo.taskName}
+                                            priority={taskInfo.priority}
+                                            taskId={taskInfo._id}
+                                        />
+                                    </Grid>
+                                ))
+                        }
+                    </Grid>
+
+                </CustomBox>
+            )
+        })
+    )
+    {/* DUE DATE OVERVIEW BOX START */ }
+    {/* <CustomBox
                             as="section"
                             className="day-overView-section"
                             display="flex"
-                            // border="2px solid red"
+                        // border="2px solid red"
                         >
                             <DayOverviewBox date={task.dueDate} />
-                        </CustomBox>
-                        {/* DUE DATE OVERVIEW BOX END */}
+                        </CustomBox> */}
+    {/* DUE DATE OVERVIEW BOX END */ }
 
-                        {/* THIS GRID HOLDS ALL THE TASKS */}
-                        <Grid container spacing={3}
-                         >
-                            {task?.tasks.map((taskInfo, taskIdx) => (
-                                <Grid item key={taskIdx}
-                                 size={{  lg: 4,xl:3 }}
-                                 >
-                                    <TaskinfoCard
-                                        taskStatusText="inprogress"
-                                        taskCard="inpogress-taskCard"
-                                        taskStatus="task-inprogress"
-                                        taskName={taskInfo.taskName}
-                                        priority={taskInfo.priority}
-                                        taskId={taskInfo._id}
-                                      
-                                    />
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </CustomBox>
-                );
-            })}
-        </>
-    );
+    {/* THIS GRID HOLDS ALL THE TASKS */ }
+    {/* <Grid container spacing={3} */ }
+    {/* > */ }
+    {/* {task?.tasks.map((taskInfo, taskIdx) => ( */ }
+    {/* <Grid item key={taskIdx}
+                                size={{ lg: 4, xl: 3 }}
+                            >
+                                {
+                                    taskInfo.isCompleted === false ?
+                                        <TaskinfoCard
+                                            taskStatusText="inprogress"
+                                            taskCard="inpogress-taskCard"
+                                            taskStatus="task-inprogress"
+                                            taskName={taskInfo.taskName}
+                                            priority={taskInfo.priority}
+                                            taskId={taskInfo._id}
+
+                                        />
+                                        : ""
+                                }
+                            </Grid> */}
+    {/* ))} */ }
+    {/* </Grid> */ }
+
+
+
+
+
 }
 
 export default AllTask;

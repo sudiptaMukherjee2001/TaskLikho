@@ -30,7 +30,7 @@ function DayOverviewBox({date}) {
                 flexDirection="column"
                 marginLeft="1rem"
             >
-                <span className='date'>{date}</span>
+                <span className='date'>{date?date:""}</span>
                 <span className='sud-text'>6 tasks</span>
             </CustomBox>
 

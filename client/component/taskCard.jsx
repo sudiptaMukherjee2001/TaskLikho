@@ -20,8 +20,6 @@ function TaskinfoCard({ taskCard,
 
     const handleCheckboxChange = async (e) => {
         const newStatus = e.target.checked;
-        console.log("Checkbox changed:", newStatus);
-        console.log("This is taskId", taskId);
         const reqBody = {
         taskId,
         isCompleted: newStatus,
