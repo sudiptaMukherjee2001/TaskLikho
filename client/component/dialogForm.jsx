@@ -17,7 +17,7 @@ function DialogForm({ open, handleClose }) {
     reset
   } = useForm({
     defaultValues: {
-      tasks: [{ name: '', priority: 'Low' }],
+      tasks: [],
       dueDate: ''
     }
   });
@@ -40,7 +40,7 @@ function DialogForm({ open, handleClose }) {
 
 
   }
-  console.log("sdfsf sFields:", fields);
+  console.log("Fields inside dialog form:", fields);
 
   return (
     <CustomDialogBox
@@ -151,17 +151,3 @@ function DialogForm({ open, handleClose }) {
 
 export default DialogForm
 
-{/* <StyledInput
-          select
-          fullWidth
-        >
-          <MenuItem value="" disabled>
-            Choose Priority
-          </MenuItem>
-          <MenuItem value="high">
-            <span style={{ color: '#f87171' }}>🔴 High Priority</span>
-          </MenuItem>
-          <MenuItem value="medium">🟠 Medium Priority</MenuItem>
-          <MenuItem value="low">🟢 Low Priority</MenuItem>
-        </StyledInput> 
-*/}
