@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { TaskCreation } from "../model/taskCreation.model.js";
 import ApiError from "../utils/apiError.js";
 import ApiResponse from "../utils/apiResponse.js";
@@ -8,14 +9,16 @@ import asyncHandler from "../utils/asyncHandler.js";
 const updateTaskStatus = asyncHandler(async (req, res) => {
     const { taskId, isCompleted } = req.body;
 
+
     if (!mongoose.Types.ObjectId.isValid(taskId)) {
         throw new ApiError(400, "Invalid Task ID");
     }
-  const updateTaskStatus =  TaskCreation.findOneAndUpdate(
-        { _id: taskId },//filter
-        { $set: { isCompleted: isCompleted } }, //update
-        { new: true } //options
+    const updateTaskStatus = await TaskCreation.updateOne(
+        { "tasks._id": taskId },
+        { $set: { "tasks.$.isCompleted": isCompleted } }
     )
+    console.log("Update task status response:", updateTaskStatus);
+
     if (!updateTaskStatus) {
         throw new ApiError(404, "Task not found");
     }

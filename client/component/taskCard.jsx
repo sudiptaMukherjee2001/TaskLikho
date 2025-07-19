@@ -6,6 +6,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { CustomCheckBox } from '@/style/CustomCheckBox.style';
+import { updateTaskStatusReq } from '@/utils/UpdateTaskStatus.util.js';
 function TaskinfoCard({ taskCard,
     taskStatusText,
     taskStatus,
@@ -16,15 +17,17 @@ function TaskinfoCard({ taskCard,
     priority,
     taskId
 }) {
-    const [isCompleted, setIsCompleted] = useState();
-    const handleCheckboxChange =  (e) => {
+
+    const handleCheckboxChange = async (e) => {
         const newStatus = e.target.checked;
         console.log("Checkbox changed:", newStatus);
         console.log("This is taskId", taskId);
-        
-        
+        const reqBody = {
+        taskId,
+        isCompleted: newStatus,
 
-
+        }
+       await updateTaskStatusReq(reqBody);      
     }
     return (
 

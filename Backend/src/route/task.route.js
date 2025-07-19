@@ -12,7 +12,7 @@ router.route('/').get(getAllTask)
 // Route to create a task
 router.route('/create-task').post(createTask);
 // Route to update a task status
-router.route('/update-task-status').patch(updateTaskStatus);
+router.route('/update-task-status').put(updateTaskStatus);
 
 
 
