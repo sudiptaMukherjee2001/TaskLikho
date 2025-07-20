@@ -21,11 +21,19 @@ export const StatusCard = styled(Box)(({
     borderRadius: borderRadius,
     border: border,
     
+    
     boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
    
-    "&. taskPanelText":{
+    "& .taskPanelText":{
 
-        fontSize:theme.typography.fontSize["2xl"],
+        fontSize:theme.typography.fontSize["base"],
         color:color
+    },
+    '@media screen and (min-width: 2560px)':{
+     "& .taskPanelText":{
+
+        fontSize:theme.typography.fontSize["3xl"],
+        color:color
+    },
     }
 }))

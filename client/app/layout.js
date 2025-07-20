@@ -3,6 +3,7 @@ import "./globals.css";
 import { Grid } from "@mui/material";
 import { StyledRightsideContentGrid } from "../style/StyledRightsideContentGrid.style";
 import LeftsideBar from "@/component/leftsideBar";
+import CustomBox from "@/style/CustomBox.style";
 
 
 const geistSans = Geist({
@@ -24,9 +25,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <CustomBox
+        // className="main-container"
+        >
+
         <Grid
           container
           height={"100vh"}
+          
         >
           {/* Left side bar start*/}
           <Grid
@@ -44,13 +50,14 @@ export default function RootLayout({ children }) {
           {/* Right side content start */}
           <StyledRightsideContentGrid
             item
-            size={{ md: 3, lg: 9, xl: 10 }}
+            size={{ md: 3, lg: 9, xl: 8 }}
           >
             {children}
 
           </StyledRightsideContentGrid>
           {/* Right side content end */}
         </Grid>
+        </CustomBox>
       </body>
     </html>
   );

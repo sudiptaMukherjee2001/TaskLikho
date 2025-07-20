@@ -331,6 +331,42 @@ const CustomBox = styled('div')(({
         "& .tick-icon": {
             fontSize: theme.typography.fontSize.label,
         }
+    },
+
+
+    '@media screen and (min-width: 2560px)':{
+    // task name in task card
+     "& .task-name": {
+        fontSize: theme.typography.fontSize.xl,
+        fontWeight: theme.typography.fontWeight.medium,
+        
+    },
+    // Completed task page
+       "& .completed-task-timeline-header-typography": {
+        fontSize: theme.typography.fontSize['4xl'],
+        fontWeight: theme.typography.fontWeight.bold,
+       
+
+    },
+    "& .completed-task-timeline-sub-header-typography": {
+        fontSize: theme.typography.fontSize.subheading,
+        fontWeight: theme.typography.fontWeight.medium,
+
+    },
+    "& .date": {
+        fontSize: theme.typography.fontSize['2xl'],
+
+    },
+    "& .sud-text": {
+        fontSize: theme.typography.fontSize.base,
+
+    },
+    "&.CompletedOnDate":{
+        fontSize: theme.typography.fontSize['2xl'],
+        "& .tick-icon":{
+            fontSize: theme.typography.fontSize['2xl'],
+        }
+    }
     }
 
 

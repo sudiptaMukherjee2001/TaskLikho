@@ -59,7 +59,7 @@ async function CompltedTask() {
 
 
   return (
-    <>
+    <CustomBox>
       <TaskStatsHeader
         headerTypography="completed-task-timeline-header-typography"
         subHeaderTypography="completed-task-timeline-sub-header-typography"
@@ -111,7 +111,7 @@ async function CompltedTask() {
       })
       }
 
-    </>
+    </CustomBox>
   )
 }
 
