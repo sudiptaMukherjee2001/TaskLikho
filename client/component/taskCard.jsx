@@ -65,7 +65,7 @@ function TaskinfoCard({ taskCard,
                 borderRadius="0.5rem"
                 lineHeight="1.3rem"
             >
-                {taskStatusText === "inprogress" ?
+                {taskStatusText === "inprogress" || taskStatusText === "Pending" ? 
                     <CustomCheckBox color="success"
                         onChange={handleCheckboxChange}
                     /> : ""
@@ -95,7 +95,7 @@ function TaskinfoCard({ taskCard,
                         className='dueDateText'
                     >
                         <CalendarMonthIcon className='tick-icon' />
-                        Due: Oct 20, 2024 (Overdue)
+                        {duedate} (Overdue)
                     </CustomBox>
                     : ""
             }

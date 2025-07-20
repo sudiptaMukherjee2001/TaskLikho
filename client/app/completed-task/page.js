@@ -10,15 +10,7 @@ import DayOverviewBox from '@/component/dayOverviewBox'
 
 async function CompltedTask() {
   const alltaskRes = await GetAllTaskReq();
-  
-
-
-  //Get the Current Date :=>
-  const date = new Date();
-  const options = { month: 'short', day: 'numeric', year: 'numeric' };
-  const formattedDate = date.toLocaleDateString('en-US', options);
-  console.log(formattedDate);
-
+  // Filter completed tasks
   const completedCard = alltaskRes?.data?.filter((item) => {
     return item.tasks.some(task => task.isCompleted === true);
   })
@@ -40,7 +32,7 @@ async function CompltedTask() {
           <CustomBox
             as="section"
             marginBottom="2rem"
-            key={index}
+            key={index}B
           >
             {/* DUE DATE OVERVIEW BOX START */}
             <CustomBox
