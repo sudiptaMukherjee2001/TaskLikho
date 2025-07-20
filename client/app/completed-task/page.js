@@ -40,7 +40,7 @@ completedCard.forEach(item => {
       <TaskStatsPanel />
       {/* map the complete task card box */}
       {completedCard?.map((completedTask, index) => {
-         const completedTasks = completedTask.tasks.filter(task => task.isCompleted === true);
+         const completedTasksCountPerDate = completedTask.tasks.filter(task => task.isCompleted === true);
         return (
           <CustomBox
             as="section"
@@ -54,7 +54,7 @@ completedCard.forEach(item => {
               display="flex"
             // border="2px solid red"
             >
-              <DayOverviewBox date={completedTask.dueDate} taskCount={completedTasks.length}/>
+              <DayOverviewBox date={completedTask.dueDate} taskCount={completedTasksCountPerDate.length}/>
             </CustomBox>
             {/* DUE DATE OVERVIEW BOX END */}
             <Grid container spacing={3}>

@@ -34,6 +34,8 @@ console.log("Total Pending Task Count:", totalPendingTaskCount);
         subHeaderText={`${totalPendingTaskCount} tasks awaiting completion`} 
       />
       {pendingTask?.map((dueTask, index) => {
+        const pendingTaskCountPerDate = dueTask.tasks.filter(task => task.isCompleted === false  );
+        console.log("pendingTaskCount", pendingTaskCountPerDate);     
         return (
           <CustomBox
             as="section"
@@ -47,7 +49,7 @@ console.log("Total Pending Task Count:", totalPendingTaskCount);
               display="flex"
             // border="2px solid red"
             >
-              <DayOverviewBox date={dueTask.dueDate} />
+              <DayOverviewBox date={dueTask.dueDate} taskCount={pendingTaskCountPerDate.length}/>
             </CustomBox>
             {/* DUE DATE OVERVIEW BOX END */}
             <Grid container spacing={3}>

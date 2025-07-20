@@ -17,6 +17,7 @@ async function AllTask() {
     return (
 
         inProgressCard?.map((inProgressTask, index) => {
+        const inProgressTasksCountPerDate = inProgressTask.tasks.filter(task => task.isCompleted === false)
             return (
                 <CustomBox
                     as="section"
@@ -30,7 +31,7 @@ async function AllTask() {
                         display="flex"
                     // border="2px solid red"
                     >
-                        <DayOverviewBox date={inProgressTask.dueDate} />
+                        <DayOverviewBox date={inProgressTask.dueDate} taskCount={inProgressTasksCountPerDate.length}/>
                     </CustomBox>
                     {/* DUE DATE OVERVIEW BOX END */}
                     <Grid container spacing={3}>
