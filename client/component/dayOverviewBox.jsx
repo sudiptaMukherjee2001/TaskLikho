@@ -2,7 +2,7 @@ import React from 'react'
 import CustomBox from '@/style/CustomBox.style'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
-function DayOverviewBox({date}) {
+function DayOverviewBox({date,taskCount}) {
     return (
         // Date box
         <CustomBox
@@ -31,7 +31,10 @@ function DayOverviewBox({date}) {
                 marginLeft="1rem"
             >
                 <span className='date'>{date?date:""}</span>
-                <span className='sud-text'>6 tasks</span>
+                <span className='sud-text'>
+                    
+                    {taskCount} tasks
+                    </span>
             </CustomBox>
 
         </CustomBox>

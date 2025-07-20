@@ -1,4 +1,4 @@
-import React from 'react'
+
 import TaskStatsPanel from '@/component/taskStatsPanel'
 import { Grid } from '@mui/material'
 import CompleteTaskCard from '@/component/taskCard'
@@ -9,13 +9,25 @@ import CustomBox from '@/style/CustomBox.style'
 import DayOverviewBox from '@/component/dayOverviewBox'
 
 async function CompltedTask() {
+
   const alltaskRes = await GetAllTaskReq();
+  
   // Filter completed tasks
   const completedCard = alltaskRes?.data?.filter((item) => {
     return item.tasks.some(task => task.isCompleted === true);
   })
   console.log("completedCard", completedCard);
 
+const totalCompletedTaskCount = completedCard.reduce((acc, item) => {
+  return acc + item.tasks.filter(task => task.isCompleted === true).length;
+}, 0);
+
+// total task per date
+completedCard.forEach(item => {
+  const completedTasks = item.tasks.filter(task => task.isCompleted === true);
+
+  console.log("Total completedCard Task Count:", completedTasks.length);
+});
 
   return (
     <>
@@ -23,16 +35,17 @@ async function CompltedTask() {
         headerTypography="completed-task-timeline-header-typography"
         subHeaderTypography="completed-task-timeline-sub-header-typography"
         headerText="Completed Tasks"
-        subHeaderText="18 tasks completed"
+        subHeaderText={`${totalCompletedTaskCount} task has completed`} 
       />
       <TaskStatsPanel />
       {/* map the complete task card box */}
       {completedCard?.map((completedTask, index) => {
+         const completedTasks = completedTask.tasks.filter(task => task.isCompleted === true);
         return (
           <CustomBox
             as="section"
             marginBottom="2rem"
-            key={index}B
+            key={index}
           >
             {/* DUE DATE OVERVIEW BOX START */}
             <CustomBox
@@ -41,7 +54,7 @@ async function CompltedTask() {
               display="flex"
             // border="2px solid red"
             >
-              <DayOverviewBox date={completedTask.dueDate} />
+              <DayOverviewBox date={completedTask.dueDate} taskCount={completedTasks.length}/>
             </CustomBox>
             {/* DUE DATE OVERVIEW BOX END */}
             <Grid container spacing={3}>
