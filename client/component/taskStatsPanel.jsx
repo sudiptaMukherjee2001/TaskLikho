@@ -5,24 +5,20 @@ import { AnalyticsCardBackgrounds } from '@/utils/AnalyticsCard.util'
 import { StatusCard } from '@/style/StatusCard.style'
 import { Grid } from '@mui/material'
 
-function TaskStatsPanel() {
+function TaskStatsPanel({stats}) {
+    console.log("TaskStatsPanel stats", stats);
+    
     return (
-        // <CustomBox
-        //     display="flex"
-        //     justifyContent="space-between"
-        //     marginBottom="2rem"
-        //     border="2px solid red"
-
-        // >
         <Grid container 
         spacing={3} 
         marginBottom="2rem"
         >
             {
-                taskStatsPanel?.map((task, index) => (
+                stats?.map((task, index) => (
                     <Grid
                         item
                         size={{ lg: 3 }}
+                        key={index}
                     >
                         <StatusCard
                             display="flex"

@@ -21,7 +21,7 @@ const pendingTask = alltaskRes?.data?.filter(item => {
 
 console.log("pendingTask", pendingTask);
 // getting total pending task count
-const totalPendingTaskCount = pendingTask.reduce((acc, item) => {
+const totalPendingTaskCount = pendingTask?.reduce((acc, item) => {
   return acc + item.tasks.filter(task => task.isCompleted === false).length;
 }, 0);
 console.log("Total Pending Task Count:", totalPendingTaskCount);
@@ -31,7 +31,7 @@ console.log("Total Pending Task Count:", totalPendingTaskCount);
         headerTypography="pending-task-timeline-header-typography"
         subHeaderTypography="pending-task-timeline-sub-header-typography"
         headerText="Pending Tasks"
-        subHeaderText={`${totalPendingTaskCount} tasks awaiting completion`} 
+        subHeaderText={`${totalPendingTaskCount?totalPendingTaskCount:0} tasks awaiting completion`} 
       />
       {pendingTask?.map((dueTask, index) => {
         const pendingTaskCountPerDate = dueTask.tasks.filter(task => task.isCompleted === false  );

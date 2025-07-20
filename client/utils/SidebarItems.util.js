@@ -7,9 +7,9 @@ export const sidebarIcon = [
   { name: "Pending", icon: '✅', link:'/pending-task'},
   { name: "Analytics", icon: '✅', isActive: false, link:'#'},
 ];
-export const taskStatsPanel = [
-  {name:"Total Completed", number: "18", icon:<CalendarMonthIcon/>  },
-  {name:"Active Days", number: "4", icon:<CalendarMonthIcon/>  },
-  {name:"Avg Per Day", number: "4", icon:<CalendarMonthIcon/>  },
-  {name:"Best Day", number: "8", icon:<CalendarMonthIcon/>  },
+export const taskStatsTemplate = [
+  { name: "Total Completed", key: "totalCompleted", icon: <CalendarMonthIcon /> },
+  { name: "Active Days", key: "activeDays", icon: <CalendarMonthIcon /> },
+  { name: "Avg Per Day", key: "avgPerDay", icon: <CalendarMonthIcon /> },
+  { name: "Best Day", key: "bestDay", icon: <CalendarMonthIcon /> },
 ];
