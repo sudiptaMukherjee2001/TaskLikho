@@ -2,10 +2,10 @@
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 export const sidebarIcon = [
-  { name: "Active Tasks", icon: '✅',link:'/'},
-  { name: "Completed", icon: '✅',link:'/completed-task'},
-  { name: "Pending", icon: '✅', link:'/pending-task'},
-  { name: "Analytics", icon: '✅', isActive: false, link:'#'},
+  { name: "Active Tasks", icon: (<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-todo group-hover:scale-110 transition-transform duration-300 tempo-7058f7de-8469-5169-9bde-dc4506cddc32" tempoelementid="tempo-7058f7de-8469-5169-9bde-dc4506cddc32"><rect x="3" y="5" width="6" height="6" rx="1"></rect><path d="m3 17 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg>),link:'/'},
+  { name: "Completed", icon:  (<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-todo group-hover:scale-110 transition-transform duration-300 tempo-7058f7de-8469-5169-9bde-dc4506cddc32" tempoelementid="tempo-7058f7de-8469-5169-9bde-dc4506cddc32"><rect x="3" y="5" width="6" height="6" rx="1"></rect><path d="m3 17 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg>),link:'/completed-task'},
+  { name: "Pending", icon:  (<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-todo group-hover:scale-110 transition-transform duration-300 tempo-7058f7de-8469-5169-9bde-dc4506cddc32" tempoelementid="tempo-7058f7de-8469-5169-9bde-dc4506cddc32"><rect x="3" y="5" width="6" height="6" rx="1"></rect><path d="m3 17 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg>), link:'/pending-task'},
+  { name: "Analytics", icon:  (<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-todo group-hover:scale-110 transition-transform duration-300 tempo-7058f7de-8469-5169-9bde-dc4506cddc32" tempoelementid="tempo-7058f7de-8469-5169-9bde-dc4506cddc32"><rect x="3" y="5" width="6" height="6" rx="1"></rect><path d="m3 17 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg>), link:'#'},
 ];
 export const taskStatsTemplate = [
   { name: "Total Completed", key: "totalCompleted", icon: <CalendarMonthIcon /> },

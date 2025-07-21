@@ -50,7 +50,9 @@ export default function RootLayout({ children }) {
           {/* Right side content start */}
           <StyledRightsideContentGrid
             item
-            size={{ md: 3, lg: 9, xl: 8 }}
+            size={{xs:12, md: 9, lg: 9, xl: 8 }}
+            
+            
           >
             {children}
 

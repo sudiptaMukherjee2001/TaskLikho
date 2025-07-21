@@ -23,6 +23,7 @@ async function AllTask() {
                     as="section"
                     marginBottom="2rem"
                     key={index}
+                   // border={"2px solid red"}
                 >
                     {/* DUE DATE OVERVIEW BOX START */}
                     <CustomBox
@@ -39,7 +40,7 @@ async function AllTask() {
                             inProgressTask.tasks
                                 .filter(taskInfo => taskInfo.isCompleted === false) // 🧹 Filter first
                                 .map((taskInfo, taskIdx) => (
-                                    <Grid item key={taskIdx}  size={{ lg: 4, xl: 3 }}>
+                                    <Grid item key={taskIdx}  size={{xs:12,sm:6, md:6, lg: 4, xl: 3}}>
                                         <TaskinfoCard
                                             taskStatusText="inprogress"
                                             taskCard="inpogress-taskCard"

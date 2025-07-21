@@ -31,9 +31,10 @@ function TaskinfoCard({ taskCard,
 
 
         <CustomBox
-            border="2px solid orange"
+            
             padding="1.5rem"
             className={taskCard}
+
 
         >
             {/* top part start */}

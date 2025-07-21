@@ -1,5 +1,5 @@
 import theme from "@/utils/theme";
-import { Button, Dialog, Menu, styled, TextField } from "@mui/material";
+import { Button, Dialog, Fab, Menu, styled, TextField } from "@mui/material";
 
 const CustomDialogBox = styled(Dialog)(({ }) => ({
 
@@ -89,6 +89,29 @@ const CreateTaskBtn = styled(Button)(({
     '&:hover': {
         background: 'linear-gradient(to right, #2563eb, #7e22ce)',
     },
+     '@media screen and (min-width: 0px) and (max-width: 1020px)': {
+        "&.create-task-btn": {
+            display: "none"
+        }
+    },
+}))
+const CreateTaskFabBtn = styled(Fab)(({
+  
+})=>({
+   
+     background: 'linear-gradient(to right, #3b82f6, #9333ea)',
+    color: 'white',
+   
+    // marginTop: '1rem',
+    textTransform: 'none',
+    
+    '&:hover': {
+        background: 'linear-gradient(to right, #2563eb, #7e22ce)',
+    },
+    '@media screen and (min-width: 1024px)': {
+            display: "none"
+        
+    },
 }))
 
 export {
@@ -96,5 +119,6 @@ export {
     StyledInput,
     StyledMenu,
     CreateTaskBtn,
-    CancelTaskModal
+    CancelTaskModal,
+    CreateTaskFabBtn
 };

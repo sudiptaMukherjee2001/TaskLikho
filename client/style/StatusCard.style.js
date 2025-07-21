@@ -29,6 +29,16 @@ export const StatusCard = styled(Box)(({
         fontSize:theme.typography.fontSize["base"],
         color:color
     },
+    // for phone
+    '@media screen and (max-width: 600px)':{
+        paddingInline:"0.6rem",
+        paddingBlock:"0.8rem",
+     "& .taskPanelText":{
+
+        fontSize:theme.typography.fontSize["sm"],
+        
+    },
+    },
     '@media screen and (min-width: 2560px)':{
      "& .taskPanelText":{
 

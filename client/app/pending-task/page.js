@@ -57,7 +57,7 @@ console.log("Total Pending Task Count:", totalPendingTaskCount);
                 dueTask.tasks
                   .filter(taskInfo => taskInfo.isCompleted === false) // 🧹 Filter first
                   .map((taskInfo, taskIdx) => (
-                    <Grid item key={taskIdx} size={{ lg: 4, xl: 3 }}>
+                    <Grid item key={taskIdx} size={{xs:12,sm:6, md:6, lg: 4, xl: 3}}>
                       <TaskinfoCard
                         taskStatusText="Pending"
                         duedate={dueTask.dueDate}

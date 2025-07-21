@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 
 export const StyledRightsideContentGrid = styled(Grid)(({ }) => ({
-    // border: '2px solid yellow',/
+ //   border: '2px solid yellow',
     paddingBlock: '1.8rem',
     paddingInline:"1.8rem",
     maxHeight: '100vh',

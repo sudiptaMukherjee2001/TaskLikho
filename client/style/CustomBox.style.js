@@ -45,7 +45,7 @@ const CustomBox = styled('div')(({
     paddingInline: paddingInline,
     paddingBlock: paddingBlock,
     paddingLeft: paddingLeft,
-   // width: width,
+    // width: width,
     paddingBottom: paddingBottom,
     marginTop: marginTop,
     marginBottom: marginBottom,
@@ -91,9 +91,13 @@ const CustomBox = styled('div')(({
         fontSize: theme.typography.fontSize.sidebarItemSize,
         fontWeight: theme.typography.fontWeight.medium,
         cursor: "pointer",
+        "& .sidebarItem-laptop-layout-link": {
+            display: "flex",
+        },
         "& .name": {
             marginLeft: "10px",
         }
+
     },
 
     //-----------------------------------------------------
@@ -110,6 +114,9 @@ const CustomBox = styled('div')(({
         fontSize: theme.typography.fontSize.sidebarItemSize,
         fontWeight: theme.typography.fontWeight.medium,
         cursor: "pointer",
+        "& .sidebarItem-laptop-layout-link": {
+            display: "flex",
+        },
         "& .name": {
             marginLeft: "10px",
         }
@@ -190,7 +197,7 @@ const CustomBox = styled('div')(({
     // ----------------------------------------------
     // 4.  inpogress TASK Card css
     // ----------------------------------------------
-   "&.inpogress-taskCard": {
+    "&.inpogress-taskCard": {
         background: theme.glass.greenCard.background,
         backdropFilter: theme.glass.greenCard.blur,
         webkitBackdropFilter: theme.glass.greenCard.blur,
@@ -200,9 +207,9 @@ const CustomBox = styled('div')(({
         padding: "1.5rem",
         color: theme.colors.text.primary,
         boxShadow: theme.glass.greenCard.glow,
-     
-       
-        
+
+
+
     },
     // ----------------------------------------------
     // 5.  Complete page 
@@ -222,7 +229,7 @@ const CustomBox = styled('div')(({
         color: theme.colors.text.sidebar,
         fontSize: theme.typography.fontSize.label,
         fontWeight: theme.typography.fontWeight.medium,
-        
+
     },
 
     "& .due-date": {
@@ -333,41 +340,48 @@ const CustomBox = styled('div')(({
         }
     },
 
-
-    '@media screen and (min-width: 2560px)':{
-    // task name in task card
-     "& .task-name": {
-        fontSize: theme.typography.fontSize.xl,
-        fontWeight: theme.typography.fontWeight.medium,
-        
-    },
-    // Completed task page
-       "& .completed-task-timeline-header-typography": {
-        fontSize: theme.typography.fontSize['4xl'],
-        fontWeight: theme.typography.fontWeight.bold,
-       
-
-    },
-    "& .completed-task-timeline-sub-header-typography": {
-        fontSize: theme.typography.fontSize.subheading,
-        fontWeight: theme.typography.fontWeight.medium,
-
-    },
-    "& .date": {
-        fontSize: theme.typography.fontSize['2xl'],
-
-    },
-    "& .sud-text": {
-        fontSize: theme.typography.fontSize.base,
-
-    },
-    "&.CompletedOnDate":{
-        fontSize: theme.typography.fontSize['2xl'],
-        "& .tick-icon":{
-            fontSize: theme.typography.fontSize['2xl'],
+    // sidebar for laptop
+    // for small screen
+    '@media screen and (min-width: 0px) and (max-width: 1020px)': {
+        "&.sideBar-laptop": {
+            display: "none"
         }
-    }
-    }
+    },
+
+    '@media screen and (min-width: 2560px)': {
+        // task name in task card
+        "& .task-name": {
+            fontSize: theme.typography.fontSize.xl,
+            fontWeight: theme.typography.fontWeight.medium,
+
+        },
+        // Completed task page
+        "& .completed-task-timeline-header-typography": {
+            fontSize: theme.typography.fontSize['4xl'],
+            fontWeight: theme.typography.fontWeight.bold,
+
+
+        },
+        "& .completed-task-timeline-sub-header-typography": {
+            fontSize: theme.typography.fontSize.subheading,
+            fontWeight: theme.typography.fontWeight.medium,
+
+        },
+        "& .date": {
+            fontSize: theme.typography.fontSize['2xl'],
+
+        },
+        "& .sud-text": {
+            fontSize: theme.typography.fontSize.base,
+
+        },
+        "&.CompletedOnDate": {
+            fontSize: theme.typography.fontSize['2xl'],
+            "& .tick-icon": {
+                fontSize: theme.typography.fontSize['2xl'],
+            }
+        }
+    },
 
 
 }))

@@ -17,7 +17,7 @@ function TaskStatsPanel({stats}) {
                 stats?.map((task, index) => (
                     <Grid
                         item
-                        size={{ lg: 3 }}
+                        size={{xs:6, md:4, lg: 3 }}
                         key={index}
                     >
                         <StatusCard

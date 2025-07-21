@@ -86,12 +86,12 @@ async function CompltedTask() {
               <DayOverviewBox date={completedTask.dueDate} taskCount={completedTasksCountPerDate.length} />
             </CustomBox>
             {/* DUE DATE OVERVIEW BOX END */}
-            <Grid container spacing={3}>
+            <Grid container spacing={3} >
               {
                 completedTask.tasks
                   .filter(taskInfo => taskInfo.isCompleted === true) // 🧹 Filter first
                   .map((taskInfo, taskIdx) => (
-                    <Grid item key={taskIdx} size={{ lg: 4, xl: 3 }}>
+                    <Grid item key={taskIdx} size={{xs:12,sm:6, md:6, lg: 4, xl: 3 }}>
                       <TaskinfoCard
                         taskStatusText="Completed"
                         completdOn={completedTask.dueDate}
