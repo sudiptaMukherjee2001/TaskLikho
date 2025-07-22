@@ -7,7 +7,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --env-file .env src/index.js"
+    "start": "nodemon --env-file .env src/index.js",
+    "vercel-build": "echo 'No build needed'",
+    "start-server": "node src/index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
