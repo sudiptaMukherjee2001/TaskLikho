@@ -3,7 +3,7 @@ import cors from 'cors';
 
 
 const app = express();
-let corsOptions = {
+var corsOptions = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200
 }
