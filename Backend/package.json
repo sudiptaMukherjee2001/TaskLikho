@@ -7,7 +7,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --env-file .env src/index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon --env-file .env src/index.js",
     "vercel-build": "echo 'No build needed'",
     "start-server": "node src/index.js"
   },
