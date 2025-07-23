@@ -6,7 +6,8 @@ import asyncHandler from "../utils/asyncHandler.js";
 
 const deleteOneTask = asyncHandler(async (req, res) => {
     const { taskId } = req.body;
-
+    console.log("taskId",taskId);
+    
     if (mongoose.Types.ObjectId.isValid(taskId)) {
         throw new ApiError(400, "Invalid Task Id");
     }
