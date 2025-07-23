@@ -30,22 +30,18 @@ function NotaskFoud({handleClickOpen}) {
                 //border={"2px solid red"}
                 >
                     <CustomBox as="section"
-
                         display="flex"
                         justifyContent="center"
-                        fontSize='2xl'
-                        marginTop="0.8rem"
                     >
                         <h2 className='not-found-header-typography'>
                             You've completed all your tasks! 😌✨
                         </h2>
                     </CustomBox>
                 </Grid>
-                <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 8, xl: 8 }} >
+                <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 8 }} >
                     <CustomBox as="section"
-                        fontSize='base'
                         textAlign="center"
-                        marginTop="0.8rem"
+                        marginTop="1rem"
                         
                     >
                         <h2 className='not-found-subHeader-typography'>
@@ -56,12 +52,12 @@ function NotaskFoud({handleClickOpen}) {
                 </Grid>
                 <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 8, xl: 8 }} >
                     <CustomBox as="section"
-                        fontSize='base'
+                        fontSize='sm'
                         textAlign="center"
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
-                        marginTop="0.8rem"
+                        marginTop="1rem"
                         columnGap="1rem"
                     >
                         <h2 className='not-found-subHeader-typography'>

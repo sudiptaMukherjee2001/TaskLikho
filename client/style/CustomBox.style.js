@@ -182,7 +182,7 @@ const CustomBox = styled('div')(({
 
     },
     "& .not-found-header-typography": {
-        fontSize: theme.typography.fontSize['3xl'],
+        fontSize: theme.typography.fontSize['2xl'],
         fontWeight: theme.typography.fontWeight.bold,
          backgroundImage: theme.colors.gradients.sideItemsColor.backgroundImage,
         color: theme.colors.gradients.sideItemsColor.color,
@@ -192,7 +192,7 @@ const CustomBox = styled('div')(({
         // marginBottom: '0.5rem',
     },
     "& .not-found-subHeader-typography": {
-        fontSize: theme.typography.fontSize['base'],
+        fontSize: theme.typography.fontSize['sm'],
         fontWeight: theme.typography.fontWeight.bold,
         backgroundImage: theme.colors.gradients.sideItemsColor.backgroundImage,
         color: theme.colors.gradients.sideItemsColor.color,
