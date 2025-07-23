@@ -15,7 +15,7 @@ router.route('/create-task').post(createTask);
 // Route to update a task status
 router.route('/update-task-status').put(updateTaskStatus);
 // Delete one task
-router.route('/delete-task').delete(deleteOneTask);
+router.route('/delete-task').post(deleteOneTask);
 
 
 
