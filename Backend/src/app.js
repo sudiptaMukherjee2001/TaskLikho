@@ -5,6 +5,7 @@ import cors from 'cors';
 const app = express();
 var corsOptions = {
   origin: 'http://localhost:3000',
+  methods: ['GET','POST','PUT','DELETE'],
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
