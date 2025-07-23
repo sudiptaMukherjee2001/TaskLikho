@@ -7,6 +7,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { CustomCheckBox } from '@/style/CustomCheckBox.style';
 import { updateTaskStatusReq } from '@/utils/UpdateTaskStatus.util.js';
+import { deleteTaskReq } from '@/utils/DeleteReq.util';
 function TaskinfoCard({ taskCard,
     taskStatusText,
     taskStatus,
@@ -26,6 +27,10 @@ function TaskinfoCard({ taskCard,
 
         }
        await updateTaskStatusReq(reqBody);      
+    }
+    const handelDelete = async (e) => {
+        
+       await deleteTaskReq(taskId);      
     }
     return (
 
@@ -111,7 +116,7 @@ function TaskinfoCard({ taskCard,
                     </CustomBox>
                     : ""
             }
-
+<button onClick={handelDelete}>delete</button>
         </CustomBox>
 
 
