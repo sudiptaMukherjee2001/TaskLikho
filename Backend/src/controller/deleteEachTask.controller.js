@@ -5,26 +5,30 @@ import ApiResponse from "../utils/apiResponse.js";
 import asyncHandler from "../utils/asyncHandler.js";
 
 const deleteOneTask = asyncHandler(async (req, res) => {
-    const { taskId } = req.body;
-    console.log("taskId",taskId);
-    
-    if (!mongoose.Types.ObjectId.isValid(taskId)) {
-        throw new ApiError(400, "Invalid Task Id");
+    console.log("Req body in controller ==>", req.body);
+
+    const { id } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        throw new ApiError(400, "Invalid Task ID");
     }
+
     const deleteOneTask = await TaskCreation.updateOne(
-        { "tasks._id": taskId },
+        { "tasks._id": id },
         {
             $pull: {
-                tasks: { _id: taskId }
+                tasks: { _id: id }
             }
         }
-    )
-    if (!deleteOneTask) {
-        throw new ApiError(404, "Task not found");
+    );
+
+    if (!deleteOneTask || deleteOneTask.modifiedCount === 0) {
+        throw new ApiError(404, "Task not found or already deleted");
     }
+
     return res.status(200).json(
         new ApiResponse(200, "Task deleted successfully", deleteOneTask)
     );
-})
+});
 
 export default deleteOneTask;

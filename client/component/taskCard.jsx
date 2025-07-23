@@ -29,8 +29,11 @@ function TaskinfoCard({ taskCard,
        await updateTaskStatusReq(reqBody);      
     }
     const handelDelete = async (e) => {
-        
-       await deleteTaskReq(taskId);      
+        console.log(typeof taskId);
+        const reqBody = {
+            id : taskId
+        }
+       await deleteTaskReq(reqBody);      
     }
     return (
 
