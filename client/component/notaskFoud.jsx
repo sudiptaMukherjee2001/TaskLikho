@@ -4,15 +4,24 @@ import CustomBox from '@/style/CustomBox.style'
 import Image from 'next/image';
 import { Grid } from '@mui/material';
 import { CreateTaskBtn } from '@/style/CustomDialogBox.jsx';
+import Link from 'next/link'
 
-function NotaskFoud({handleClickOpen}) {
+function NotaskFoud({
+    handleClickOpen,
+    avatar,
+    headerText,
+    subHeaderText,
+    cta,
+    path
+
+}) {
     return (
         <CustomBox
             display="flex"
             flexDirection="column"
             alignItems="center"
             justifyContent="space-evenly"
-            // border="2px solid yellow"
+          //  border="2px solid yellow"
             height="100%"
         >
             <CustomBox
@@ -20,7 +29,7 @@ function NotaskFoud({handleClickOpen}) {
                 borderRadius="50%"
                 overflow="hidden"
             >
-                <Image src="/noTaskFound.jpg" alt="demo" quality={95} width={200} height={200} className='img' />
+                <Image src={avatar} alt="demo" quality={95} width={190} height={190} className='img' />
             </CustomBox>
             <Grid
                 container
@@ -34,7 +43,7 @@ function NotaskFoud({handleClickOpen}) {
                         justifyContent="center"
                     >
                         <h2 className='not-found-header-typography'>
-                            You've completed all your tasks! 😌✨
+                            {headerText}
                         </h2>
                     </CustomBox>
                 </Grid>
@@ -42,10 +51,10 @@ function NotaskFoud({handleClickOpen}) {
                     <CustomBox as="section"
                         textAlign="center"
                         marginTop="1rem"
-                        
+
                     >
                         <h2 className='not-found-subHeader-typography'>
-                            Take a moment to relax — you've earned it. Consistency creates clarity. Rest today, rise stronger tomorrow.
+                            {subHeaderText}
                         </h2>
 
                     </CustomBox>
@@ -61,14 +70,27 @@ function NotaskFoud({handleClickOpen}) {
                         columnGap="1rem"
                     >
                         <h2 className='not-found-subHeader-typography'>
-                            Ready for your next mission? Click on
+                            {cta}
                         </h2>
-                    <CreateTaskBtn className='create-task-btn'
-                        borderRadius="0.2rem"
-                        onClick={handleClickOpen}
-                    >
-                        Create task
-                    </CreateTaskBtn>
+                        {
+                            path == "/completed-task" ?
+                                // <CreateTaskBtn className='create-task-btn'
+                                //     borderRadius="0.2rem"
+                                // >
+                                //     {/* <Link > */}
+                                //    Go to Actice Task
+                                //     {/* </Link> */}
+                                // </CreateTaskBtn>
+                                ""
+                                :
+                                <CreateTaskBtn className='create-task-btn'
+                                    borderRadius="0.2rem"
+                                    onClick={handleClickOpen}
+                                >
+                                    Create task
+                                </CreateTaskBtn>
+
+                        }
                     </CustomBox>
                 </Grid>
             </Grid>

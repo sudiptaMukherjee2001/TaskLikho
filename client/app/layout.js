@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
             item
             size={{xs:12, md: 9, lg: 9, xl: 8 }}
             
-           // border={"2px solid red"}
+          //  border={"2px solid red"}
           >
             {children}
 

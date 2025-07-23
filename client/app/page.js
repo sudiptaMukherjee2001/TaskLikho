@@ -48,6 +48,10 @@ export default  function Home() {
               (inProgressCard?.length===0)?
                 <NotaskFoud
                  handleClickOpen={handleClickOpen}
+                 avatar="/CompletedTask.jpg"
+                 headerText="You've completed all your tasks! 😌✨"
+                 subHeaderText="Take a moment to relax — you've earned it. Consistency creates clarity. Rest today, rise stronger tomorrow."
+                 cta="Ready for your next mission? Click on"
                 /> : <AllTask inProgressCard={inProgressCard}/>
              
             }

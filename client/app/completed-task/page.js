@@ -1,4 +1,6 @@
 
+'use client'
+import { useEffect, useState } from 'react'
 import TaskStatsPanel from '@/component/taskStatsPanel'
 import { Grid } from '@mui/material'
 import CompleteTaskCard from '@/component/taskCard'
@@ -8,19 +10,36 @@ import { GetAllTaskReq } from '@/utils/GetallTaskReq.utli'
 import CustomBox from '@/style/CustomBox.style'
 import DayOverviewBox from '@/component/dayOverviewBox'
 import { taskStatsTemplate } from '@/utils/SidebarItems.util.js'
+import { usePathname } from 'next/navigation'
+import NotaskFoud from '@/component/notaskFoud'
 
-async function CompltedTask() {
-
-  const alltaskRes = await GetAllTaskReq();
+ function CompltedTask() {
+    const [allTaskRes, setAllTaskRes] = useState([]);
+     const pathname = usePathname();
+    console.log("path",typeof pathname);
+    
+  // ✅ Fetch once on initial page load
+    useEffect(() => {
+      const fetchTasks = async () => {
+        try {
+          const res = await GetAllTaskReq();
+          console.log("All tasks response:", res);
+          setAllTaskRes(res?.data || []);
+        } catch (error) {
+          console.error("Error fetching tasks:", error);
+        }
+      };
+      fetchTasks();
+    }, []);
 
   // Filter completed tasks
-  const completedCard = alltaskRes?.data?.filter((item) => {
-    return item.tasks.some(task => task.isCompleted === true);
+  const completedCard = allTaskRes?.filter((item) => {
+    return item?.tasks?.some(task => task?.isCompleted === true);
   })
   console.log("completedCard", completedCard);
 
   const totalCompletedTaskCount = completedCard?.reduce((acc, item) => {
-    return acc + item.tasks.filter(task => task.isCompleted === true).length;
+    return acc + item.tasks.filter(task => task?.isCompleted === true).length;
   }, 0);
   console.log("totalCompletedTaskCount", totalCompletedTaskCount);
 
@@ -33,9 +52,11 @@ async function CompltedTask() {
   console.log("Average completed task count", avgCompletedTaskCount);
 
   // bestDay=> The highest number of tasks completed in a single day
-  const bestDay = Math.max(...completedCard.map(item =>
-    item.tasks.filter(task => task.isCompleted).length
-  ));
+  const bestDay =completedCard && completedCard.length > 0
+  ? Math.max(...completedCard.map(item =>
+      item.tasks.filter(task => task?.isCompleted).length
+    ))
+  : 0;
 
   console.log("Best day", bestDay);
 
@@ -67,8 +88,20 @@ async function CompltedTask() {
         subHeaderText={`${totalCompletedTaskCount} task has completed`}
       />
       <TaskStatsPanel stats={taskStatsData} />
-      {/* map the complete task card box */}
-      {completedCard?.map((completedTask, index) => {
+      <CustomBox
+      height={completedCard?.length === 0 ? "74vh" : "none"}
+      >
+        {
+          (completedCard?.length===0)?
+           <NotaskFoud
+            avatar="/notCompletedTask.jpg"
+            headerText="Haven’t marked any tasks as done yet! ✍️✅"
+            subHeaderText="Every completed task is a step forward. Start small, win big"
+            path={pathname}
+          />
+          :
+     
+      completedCard?.map((completedTask, index) => {
         const completedTasksCountPerDate = completedTask.tasks.filter(task => task.isCompleted === true);
         return (
           <CustomBox
@@ -83,14 +116,14 @@ async function CompltedTask() {
               display="flex"
             // border="2px solid red"
             >
-              <DayOverviewBox date={completedTask.dueDate} taskCount={completedTasksCountPerDate.length} />
+              <DayOverviewBox date={completedTask?.dueDate} taskCount={completedTasksCountPerDate.length} />
             </CustomBox>
             {/* DUE DATE OVERVIEW BOX END */}
             <Grid container spacing={3} >
               {
-                completedTask.tasks
-                  .filter(taskInfo => taskInfo.isCompleted === true) // 🧹 Filter first
-                  .map((taskInfo, taskIdx) => (
+                completedTask?.tasks
+                  ?.filter(taskInfo => taskInfo.isCompleted === true) // 🧹 Filter first
+                  ?.map((taskInfo, taskIdx) => (
                     <Grid item key={taskIdx} size={{xs:12,sm:6, md:6, lg: 4, xl: 3 }}>
                       <TaskinfoCard
                         taskStatusText="Completed"
@@ -109,7 +142,9 @@ async function CompltedTask() {
           </CustomBox>
         )
       })
-      }
+      
+        }
+      </CustomBox>
 
     </CustomBox>
   )

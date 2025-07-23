@@ -176,8 +176,8 @@ const CustomBox = styled('div')(({
 
     },
     "&.not-found": {
-        width: "200px",
-        height: "200px",
+        width: "190px",
+        height: "190px",
 
 
     },
