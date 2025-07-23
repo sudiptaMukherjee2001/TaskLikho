@@ -1,17 +1,11 @@
-'use client'
-import React, { useState } from 'react'
+
+import React from 'react'
 import CustomBox from '@/style/CustomBox.style.js'
 import { Button } from '@mui/material'
-import DialogForm from './dialogForm.jsx'
 import { CreateTaskBtn,CreateTaskFabBtn } from '@/style/CustomDialogBox.jsx'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-function TaskTimelineHeader() {
-  const [open, setOpen] = useState(false)
+function TaskTimelineHeader({handleClickOpen}) {
  
-
-
-  const handleClickOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
   return (
     <>
       <CustomBox as="header"
@@ -24,19 +18,18 @@ function TaskTimelineHeader() {
         <h2 className='task-timeline-header-typography'>
           Task Timeline
         </h2>
-       
+            {/* for mobile */}
             <CreateTaskFabBtn onClick={handleClickOpen} >
               <AddCircleOutlineIcon />
             </CreateTaskFabBtn>
-            
-            <CreateTaskBtn onClick={handleClickOpen} className='create-task-btn'>
+           {/* for large screen */}
+            <CreateTaskBtn onClick={handleClickOpen} className='create-task-btn' borderRadius="0.2rem">
               Create task
             </CreateTaskBtn>
         
 
       </CustomBox>
-      {/* Dialog Controlled Here */}
-      <DialogForm open={open} handleClose={handleClose} />
+    
     </>
   )
 }

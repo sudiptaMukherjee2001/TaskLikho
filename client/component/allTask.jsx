@@ -3,17 +3,8 @@ import React from 'react';
 import DayOverviewBox from './dayOverviewBox';
 import { Grid } from '@mui/material';
 import TaskinfoCard from './taskCard';
-import { GetAllTaskReq } from '@/utils/GetallTaskReq.utli';
 
-async function AllTask() {
-    const alltaskRes = await GetAllTaskReq();
-  
-    
-    const inProgressCard = alltaskRes?.data?.filter((item) => {
-        return item.tasks.some(task => task.isCompleted === false);
-    })
-    console.log("inProgressCard", inProgressCard);
-
+ function AllTask({inProgressCard}) {  
     return (
 
         inProgressCard?.map((inProgressTask, index) => {
@@ -23,7 +14,7 @@ async function AllTask() {
                     as="section"
                     marginBottom="2rem"
                     key={index}
-                   // border={"2px solid red"}
+                   
                 >
                     {/* DUE DATE OVERVIEW BOX START */}
                     <CustomBox

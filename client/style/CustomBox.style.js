@@ -14,6 +14,7 @@ const CustomBox = styled('div')(({
     alignItems,
     justifyContent,
     rowGap,
+    columnGap,
     padding,
     paddingInline,
     paddingBlock,
@@ -25,7 +26,9 @@ const CustomBox = styled('div')(({
     marginLeft,
     overflow,
     borderRadius,
-    lineHeight
+    lineHeight,
+    textAlign,
+    fontSize
 
 
 }) => ({
@@ -41,6 +44,8 @@ const CustomBox = styled('div')(({
     alignItems: alignItems,
     justifyContent: justifyContent,
     rowGap: rowGap,
+    columnGap:columnGap,
+    columnGap:columnGap,
     padding: padding,
     paddingInline: paddingInline,
     paddingBlock: paddingBlock,
@@ -52,6 +57,8 @@ const CustomBox = styled('div')(({
     marginLeft: marginLeft,
     overflow: overflow,
     lineHeight: lineHeight,
+    textAlign: textAlign,
+    fontSize: theme.typography.fontSize[fontSize],
 
     // ----------------------------------------------
     // 1. Side navbar css
@@ -167,6 +174,32 @@ const CustomBox = styled('div')(({
             borderRadius: '3px'
         }
 
+    },
+    "&.not-found": {
+        width: "200px",
+        height: "200px",
+
+
+    },
+    "& .not-found-header-typography": {
+        fontSize: theme.typography.fontSize['3xl'],
+        fontWeight: theme.typography.fontWeight.bold,
+         backgroundImage: theme.colors.gradients.sideItemsColor.backgroundImage,
+        color: theme.colors.gradients.sideItemsColor.color,
+        bacckgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        // color: "transparent",
+        // marginBottom: '0.5rem',
+    },
+    "& .not-found-subHeader-typography": {
+        fontSize: theme.typography.fontSize['base'],
+        fontWeight: theme.typography.fontWeight.bold,
+        backgroundImage: theme.colors.gradients.sideItemsColor.backgroundImage,
+        color: theme.colors.gradients.sideItemsColor.color,
+        bacckgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        // color: "transparent",
+        
     },
     // ----------------------------------------------
     // 3.  day-overviewBox css
