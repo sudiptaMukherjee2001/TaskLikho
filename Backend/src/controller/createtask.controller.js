@@ -2,9 +2,53 @@ import asyncHandler from '../utils/asyncHandler.js';
 import ApiError from '../utils/apiError.js';
 import APiResonse from '../utils/apiResponse.js';
 import { TaskCreation } from '../model/taskCreation.model.js';
+import { google } from "googleapis";
 const createTask = asyncHandler(async (req, res) => {
 
    const { tasks, dueDate } = req.body;
+   const accessToken = req.body.accessToken;
+   console.log("Accesstoken==>", accessToken)
+   if (!accessToken) {
+      console.log("No access token provided. Skipping calendar sync.");
+      return res.status(201).json({ message: 'Task created but calendar not synced' });
+   }
+   const calendar = google.calendar({ version: 'v3' });
+   const auth = new google.auth.OAuth2(); // Perfect!
+   auth.setCredentials({ access_token: accessToken });
+   const summaryText = tasks.map(task => task.taskName).join(', '); // Convert array of task names into comma-separated string
+   console.log("summaryText", summaryText);
+
+   const event = {
+      summary: `Tasks: ${summaryText}`, // or task name
+      description: `Task priorities: ${tasks.map(task => `${task.taskName} (${task.priority})`).join(', ')}`,
+      start: {
+         date: dueDate,
+      },
+      end: {
+         date: dueDate,
+      },
+   };
+
+   console.log("event==>", event);
+   try {
+      await calendar.events.insert({
+         auth,
+         calendarId: 'primary',
+         requestBody: event,
+      });
+      console.log("✅ Event inserted into Google Calendar");
+   } catch (err) {
+      console.error("❌ Calendar event insertion failed:", err.message);
+      // If error is due to auth failure
+      if (
+         err?.response?.status === 401 ||
+         err?.message?.includes("invalid_grant") ||
+         err?.message?.includes("Invalid Credentials")
+      ) {
+         return res.status(401).json({ error: "invalid_token" });
+      }
+   }
+
    if (!dueDate || !Array.isArray(tasks) || tasks.length === 0) {
       throw new ApiError("Please provide dueDate and at least one task", 400);
    }

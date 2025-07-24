@@ -6,7 +6,7 @@ import CustomBox from '@/style/CustomBox.style';
 import { Grid } from "@mui/material";
 import TaskListSection from './taskListSection';
 import { createTaskReq } from '@/utils/CreateReq.util.js';
-
+import { getSession } from 'next-auth/react';
 function DialogForm({ open, handleClose }) {
   const [taskName, setTaskName] = useState('');
   const {
@@ -26,14 +26,21 @@ function DialogForm({ open, handleClose }) {
     name: 'tasks'
   });
   const onSubmit = async (data) => {
+    const session = await getSession(); // Get the logged-in user's session
+    console.log("session==>", session);
+
+    const accessToken = session?.accessToken;
+
+
     const finalData = {
       dueDate: data.dueDate,
-      tasks: data.tasks.map((task)=>(
+      tasks: data.tasks.map((task) => (
         {
           taskName: task.name,
-          priority: task.priority 
+          priority: task.priority
         }
-      ))
+      )),
+      accessToken: accessToken, // Add it to the request body
     }
     console.log('finalData:', finalData);// this finalData will be sent to the server
     await createTaskReq(finalData);

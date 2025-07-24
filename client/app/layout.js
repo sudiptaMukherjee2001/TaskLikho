@@ -4,6 +4,7 @@ import { Grid } from "@mui/material";
 import { StyledRightsideContentGrid } from "../style/StyledRightsideContentGrid.style";
 import LeftsideBar from "@/component/leftsideBar";
 import CustomBox from "@/style/CustomBox.style";
+import NextAuthProvider from "@/component/NextAuthProvider";
 
 
 const geistSans = Geist({
@@ -25,41 +26,43 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <CustomBox
-        // className="main-container"
-        >
-
-        <Grid
-          container
-          height={"100vh"}
-          
-        >
-          {/* Left side bar start*/}
-          <Grid
-            item
-            size={{ md: 3, lg: 3, xl: 2 }}
-            className='leftSidebar'
-          //  sx={{ border: '2px solid yellow' }}
+        <NextAuthProvider>
+          <CustomBox
+          // className="main-container"
           >
-            <LeftsideBar />
 
-          </Grid>
-          {/* Left side bar end*/}
+            <Grid
+              container
+              height={"100vh"}
+
+            >
+              {/* Left side bar start*/}
+              <Grid
+                item
+                size={{ md: 3, lg: 3, xl: 2 }}
+                className='leftSidebar'
+              //  sx={{ border: '2px solid yellow' }}
+              >
+                <LeftsideBar />
+
+              </Grid>
+              {/* Left side bar end*/}
 
 
-          {/* Right side content start */}
-          <StyledRightsideContentGrid
-            item
-            size={{xs:12, md: 9, lg: 9, xl: 8 }}
-            
-          //  border={"2px solid red"}
-          >
-            {children}
+              {/* Right side content start */}
+              <StyledRightsideContentGrid
+                item
+                size={{ xs: 12, md: 9, lg: 9, xl: 8 }}
 
-          </StyledRightsideContentGrid>
-          {/* Right side content end */}
-        </Grid>
-        </CustomBox>
+              //  border={"2px solid red"}
+              >
+                {children}
+
+              </StyledRightsideContentGrid>
+              {/* Right side content end */}
+            </Grid>
+          </CustomBox>
+        </NextAuthProvider>
       </body>
     </html>
   );

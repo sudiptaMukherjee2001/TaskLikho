@@ -6,11 +6,13 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useMediaQuery } from '@mui/material'
 import NavBarBoxForMobile from '@/style/NavBarBoxForMobile.style.js'
-
+// TSESTING
+import { useSession, signIn, signOut } from 'next-auth/react';
 function LeftsideBar() {
+    const { data: session } = useSession();
     const pathname = usePathname();
-return (
-    <>
+    return (
+        <>
             {/* Navbar for mobile screen */}
             <NavBarBoxForMobile background="sidebar">
                 {sidebarIcon.map((item, index) => (
@@ -19,9 +21,9 @@ return (
                     </Link>
                 ))}
             </NavBarBoxForMobile>
-        
 
-        {/* Navbard for laptop */}
+
+            {/* Navbard for laptop */}
             <CustomBox
                 minHeight='100vh'
                 //border="3px solid red"
@@ -66,6 +68,22 @@ return (
                     {/* navigation menu end*/}
                 </CustomBox>
                 {/* Brand name and navigation menu end */}
+                {/* TESTING  */}
+                <div>
+                    {session ? (
+                        <>
+                            <p>Welcome, {session.user.name}</p>
+                            <button onClick={() => signOut()}>Logout</button>
+                        </>
+                    ) : (
+                        <button onClick={() => signIn('google')}>Sign in with Google</button>
+                    )}
+                </div>
+
+
+
+
+
                 {/* copyright section start */}
                 <CustomBox as="footer"
                     className='SideBar-footer-outer-laptop'
@@ -77,9 +95,9 @@ return (
                 </CustomBox>
                 {/* copyright section start */}
             </CustomBox>
-        
-    </>
-)
+
+        </>
+    )
 }
 
 export default LeftsideBar
