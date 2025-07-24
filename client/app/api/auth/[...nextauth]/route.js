@@ -23,9 +23,14 @@ export const authOptions = {
       }
       return token;
     },
+
+
     async session({ session, token }) {
-      session.accessToken = token.accessToken;
-      session.refreshToken = token.refreshToken;
+      session.user = {
+        name: token.name,
+        email: token.email,
+
+      };
       return session;
     },
   },
