@@ -76,7 +76,8 @@ const CancelTaskModal = styled(Button)({
 const CreateTaskBtn = styled(Button)(({
     padding,
     borderRadius,
-    width
+    width,
+    marginTop
 })=>({
     width: width ,
      background: 'linear-gradient(to right, #3b82f6, #9333ea)',
@@ -86,6 +87,7 @@ const CreateTaskBtn = styled(Button)(({
     // marginTop: '1rem',
     textTransform: 'none',
     fontWeight: 600,
+    marginTop:marginTop,
     '&:hover': {
         background: 'linear-gradient(to right, #2563eb, #7e22ce)',
     },

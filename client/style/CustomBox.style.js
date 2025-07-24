@@ -28,7 +28,8 @@ const CustomBox = styled('div')(({
     borderRadius,
     lineHeight,
     textAlign,
-    fontSize
+    fontSize,
+    cursor
 
 
 }) => ({
@@ -44,8 +45,8 @@ const CustomBox = styled('div')(({
     alignItems: alignItems,
     justifyContent: justifyContent,
     rowGap: rowGap,
-    columnGap:columnGap,
-    columnGap:columnGap,
+    columnGap: columnGap,
+    columnGap: columnGap,
     padding: padding,
     paddingInline: paddingInline,
     paddingBlock: paddingBlock,
@@ -59,7 +60,7 @@ const CustomBox = styled('div')(({
     lineHeight: lineHeight,
     textAlign: textAlign,
     fontSize: theme.typography.fontSize[fontSize],
-
+    cursor: cursor,
     // ----------------------------------------------
     // 1. Side navbar css
     // ----------------------------------------------
@@ -184,7 +185,7 @@ const CustomBox = styled('div')(({
     "& .not-found-header-typography": {
         fontSize: theme.typography.fontSize['2xl'],
         fontWeight: theme.typography.fontWeight.bold,
-         backgroundImage: theme.colors.gradients.sideItemsColor.backgroundImage,
+        backgroundImage: theme.colors.gradients.sideItemsColor.backgroundImage,
         color: theme.colors.gradients.sideItemsColor.color,
         bacckgroundClip: "text",
         WebkitBackgroundClip: "text",
@@ -199,7 +200,7 @@ const CustomBox = styled('div')(({
         bacckgroundClip: "text",
         WebkitBackgroundClip: "text",
         // color: "transparent",
-        
+
     },
     // ----------------------------------------------
     // 3.  day-overviewBox css

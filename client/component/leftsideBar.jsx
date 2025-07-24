@@ -8,6 +8,7 @@ import { useMediaQuery } from '@mui/material'
 import NavBarBoxForMobile from '@/style/NavBarBoxForMobile.style.js'
 // TSESTING
 import { useSession, signIn, signOut } from 'next-auth/react';
+import { CreateTaskBtn } from '@/style/CustomDialogBox'
 function LeftsideBar() {
     const { data: session } = useSession();
     const pathname = usePathname();
@@ -71,12 +72,33 @@ function LeftsideBar() {
                 {/* TESTING  */}
                 <div>
                     {session ? (
-                        <>
-                            <p>Welcome, {session.user.name}</p>
-                            <button onClick={() => signOut()}>Logout</button>
-                        </>
+                        <CustomBox>
+                            <h2 className='not-found-subHeader-typography'>
+                                Welcome, {session.user.name}
+                            </h2>
+
+                            <CreateTaskBtn
+                                type="button"
+                                onClick={() => signOut()}
+                                padding="0.5rem 0.5rem"
+                                width="30%"
+                                marginTop="0.8rem"
+                                borderRadius="0.2rem"
+                            >
+                                Logout
+                            </CreateTaskBtn>
+
+                        </CustomBox>
                     ) : (
-                        <button onClick={() => signIn('google')}>Sign in with Google</button>
+                        <CreateTaskBtn
+                            type="button"
+                            onClick={() => signIn('google')}
+                            padding="0.5rem 0.5rem"
+                         borderRadius="0.2rem"
+                        >
+                            Sign in with Google
+                        </CreateTaskBtn>
+
                     )}
                 </div>
 

@@ -10,7 +10,6 @@ const createTask = asyncHandler(async (req, res) => {
    console.log("Accesstoken==>", accessToken)
    if (!accessToken) {
       console.log("No access token provided. Skipping calendar sync.");
-      return res.status(201).json({ message: 'Task created but calendar not synced' });
    }
    const calendar = google.calendar({ version: 'v3' });
    const auth = new google.auth.OAuth2(); // Perfect!

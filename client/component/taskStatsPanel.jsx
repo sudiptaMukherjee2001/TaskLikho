@@ -23,7 +23,8 @@ function TaskStatsPanel({stats}) {
                         <StatusCard
                             display="flex"
                             alignItems="center"
-                            padding="1rem"
+                            paddingInline="0.8rem"
+                            paddingBlock="0.8rem"
                             key={index}
                             color={AnalyticsCardBackgrounds[index].textColor}
                             background={AnalyticsCardBackgrounds[index].background}

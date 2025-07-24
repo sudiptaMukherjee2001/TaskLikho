@@ -8,6 +8,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { CustomCheckBox } from '@/style/CustomCheckBox.style';
 import { updateTaskStatusReq } from '@/utils/UpdateTaskStatus.util.js';
 import { deleteTaskReq } from '@/utils/DeleteReq.util';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 function TaskinfoCard({ taskCard,
     taskStatusText,
     taskStatus,
@@ -22,24 +23,24 @@ function TaskinfoCard({ taskCard,
     const handleCheckboxChange = async (e) => {
         const newStatus = e.target.checked;
         const reqBody = {
-        taskId,
-        isCompleted: newStatus,
+            taskId,
+            isCompleted: newStatus,
 
         }
-       await updateTaskStatusReq(reqBody);      
+        await updateTaskStatusReq(reqBody);
     }
     const handelDelete = async (e) => {
         console.log(typeof taskId);
         const reqBody = {
-            id : taskId
+            id: taskId
         }
-       await deleteTaskReq(reqBody);      
+        await deleteTaskReq(reqBody);
     }
     return (
 
 
         <CustomBox
-            
+
             padding="1.5rem"
             className={taskCard}
 
@@ -68,13 +69,14 @@ function TaskinfoCard({ taskCard,
                 display="flex"
                 // flexDirection="column"
                 alignItems="center"
-                marginTop="1rem"
+                marginTop="0.6rem"
+                marginBottom="0.6rem"
                 color='sidebar'
                 padding="0.85rem"
                 borderRadius="0.5rem"
                 lineHeight="1.3rem"
             >
-                {taskStatusText === "inprogress" || taskStatusText === "Pending" ? 
+                {taskStatusText === "inprogress" || taskStatusText === "Pending" ?
                     <CustomCheckBox color="success"
                         onChange={handleCheckboxChange}
                     /> : ""
@@ -119,7 +121,16 @@ function TaskinfoCard({ taskCard,
                     </CustomBox>
                     : ""
             }
-<button onClick={handelDelete}>delete</button>
+            <CustomBox
+            // border="2px solid red"
+            display="flex"
+            justifyContent="end"
+            cursor="pointer"
+            >
+                <DeleteOutlineIcon
+                    onClick={handelDelete}
+                />
+            </CustomBox>
         </CustomBox>
 
 
