@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const app = express();
 var corsOptions = {
-  origin: 'http://localhost:3000 , https://tasklikho.sudiptoworks.in/',
+  origin: ['http://localhost:3000', 'https://tasklikho.sudiptoworks.in'],
   methods: ['GET','POST','PUT','DELETE'],
   optionsSuccessStatus: 200
 }
