@@ -1,17 +1,34 @@
 'use client'
 import CustomBox from '@/style/CustomBox.style.js'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { sidebarIcon } from '@/utils/SidebarItems.util.js'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useMediaQuery } from '@mui/material'
 import NavBarBoxForMobile from '@/style/NavBarBoxForMobile.style.js'
+
 // TSESTING
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { CreateTaskBtn } from '@/style/CustomDialogBox'
 function LeftsideBar() {
     const { data: session } = useSession();
     const pathname = usePathname();
+    const memoizedSidebar = useMemo(() => (
+    sidebarIcon.map((item, index) => (
+      <CustomBox
+        key={index}
+        className={pathname === item.link
+          ? "sidebarItem-laptop-layout-active-testing"
+          : "sidebarItem-laptop-layout-inActive-testing"}
+      >
+        <Link href={item.link} className='sidebarItem-laptop-layout-link'>
+          <span className='icon'>{item.icon}</span>
+          <span className='name'>{item.name}</span>
+        </Link>
+      </CustomBox>
+    ))
+  ), [pathname, sidebarIcon]);
+  
     return (
         <>
             {/* Navbar for mobile screen */}
@@ -55,7 +72,8 @@ function LeftsideBar() {
                         // border="2px solid red"
                         marginTop="2.5rem"
                     >
-                        {
+                          {memoizedSidebar}
+                        {/* {
                             sidebarIcon.map((item, index) => (
                                 <CustomBox key={index} className={`${pathname === item.link ? "sidebarItem-laptop-layout-active-testing" : "sidebarItem-laptop-layout-inActive-testing"}`}>
                                     <Link href={item.link} className='sidebarItem-laptop-layout-link'>
@@ -64,7 +82,7 @@ function LeftsideBar() {
                                     </Link>
                                 </CustomBox>
                             ))
-                        }
+                        } */}
                     </CustomBox>
                     {/* navigation menu end*/}
                 </CustomBox>

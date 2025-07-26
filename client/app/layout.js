@@ -5,7 +5,7 @@ import { StyledRightsideContentGrid } from "../style/StyledRightsideContentGrid.
 import LeftsideBar from "@/component/leftsideBar";
 import CustomBox from "@/style/CustomBox.style";
 import NextAuthProvider from "@/component/NextAuthProvider";
-
+import RouteLoader from "@/component/routeLoader.js";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          
         <NextAuthProvider>
           <CustomBox
           // className="main-container"
@@ -56,13 +57,16 @@ export default function RootLayout({ children }) {
 
               //  border={"2px solid red"}
               >
+                <RouteLoader>
                 {children}
+                </RouteLoader>
 
               </StyledRightsideContentGrid>
               {/* Right side content end */}
             </Grid>
           </CustomBox>
         </NextAuthProvider>
+          
       </body>
     </html>
   );
