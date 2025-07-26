@@ -114,12 +114,12 @@ const CreateTaskFabBtn = styled(Fab)(({
             display: "none"
         
     },
-}))
+}));
 
 export {
     CustomDialogBox,
     StyledInput,
-    StyledMenu,
+    // StyledMenu,
     CreateTaskBtn,
     CancelTaskModal,
     CreateTaskFabBtn
