@@ -21,15 +21,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
  
-    - name: Go to backend folder and Install dependencies
+    - name: Install Dependencies
       working-directory: ./Backend
       run: npm install
       
-    - name: Go to frontend folder and Install dependencies
+    - name: Install Dependencies
       working-directory: ./client
       run: npm install
 
-    - name: Prepare for build
+    - name: Build Client
       run: npm run build
       working-directory: ./client
     
