@@ -1,0 +1,39 @@
+# This workflow is triggered on pushes to the "staging-main" branch  then build it and merge it to main branch.
+name: Integration of branches and pull requests 
+
+on:
+  push:
+    branches: [ "staging-main" ]
+
+
+jobs:
+  build-and-merge:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: 'Go to backend folder and Install dependencies'
+      run: npm install
+      working-directory: ./Backend
+      
+    - name: 'Go to frontend folder and Install dependencies'
+      run: npm install
+      working-directory: ./client
+    - name: 'Prepare for build'
+      run: npm run build
+      working-directory: ./client
+    - name: 'Auto merge'
+      uses: devmasx/merge-branch@v1.4.0
+      with:
+        type: now
+        from_branch: staging-main
+        target_branch: main
+        github_token: ${{ secrets.GITHUB_TOKEN }}
