@@ -20,16 +20,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Go to backend folder and Install dependencies
+    - name: 'Go to backend folder and Install dependencies'
       run: npm install
       working-directory: Backend/
       
-    - name: Go to frontend folder and Install dependencies
+    - name: 'Go to frontend folder and Install dependencies'
       run: npm install
       working-directory: client/
     - name: Prepare for build
       run: npm run build
       working-directory: client/
+    - name: 'Debug folder structure'
+      run: ls -la
     - name: 'Auto merge'
       uses: devmasx/merge-branch@v1.4.0
       with:
