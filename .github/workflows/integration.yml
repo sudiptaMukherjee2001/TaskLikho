@@ -20,21 +20,23 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: 'Go to backend folder and Install dependencies'
-      run: |
-        cd ./client
-        npm install
+        cache-dependency-path: |
+          Backend/package-lock.json
+          client/package-lock.json
+ 
+    - name: Install Dependencies
       working-directory: ./Backend
+      run: npm install
       
-    - name: 'Go to frontend folder and Install dependencies'
-      run: |
-        cd ./client
-        npm install
+    - name: Install Dependencies
       working-directory: ./client
-    - name: 'Prepare for build'
+      run: npm install
+
+    - name: Build Client
       run: npm run build
       working-directory: ./client
-    - name: 'Auto merge'
+    
+    - name: Auto merge
       uses: devmasx/merge-branch@v1.4.0
       with:
         type: now
