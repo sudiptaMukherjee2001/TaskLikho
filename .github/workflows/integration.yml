@@ -23,13 +23,14 @@ jobs:
     - name: 'Debug folder structure'
       run: ls -la
     - name: 'Go to backend folder and Install dependencies'
-      run: npm install
       working-directory: ./Backend
+      run: npm install
       
     - name: 'Go to frontend folder and Install dependencies'
-      run: npm install
       working-directory: ./client
-    - name: Prepare for build
+      run: npm install
+
+    - name: 'Prepare for build'
       run: npm run build
       working-directory: ./client
     
