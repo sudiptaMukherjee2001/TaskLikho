@@ -27,7 +27,7 @@ jobs:
     - name: Go to frontend folder and Install dependencies
       run: npm install
       working-directory: ./client
-    - name: 'Prepare for build'
+    - name: Prepare for build
       run: npm run build
       working-directory: ./client
     - name: 'Auto merge'
